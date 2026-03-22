@@ -31,10 +31,6 @@ body.page-home {
   --accent: #2a9d8f;
 }
 
-body.page-home .top-bar {
-  background: #dce6f0;
-  border-bottom-color: #c5d3e2;
-}
 
 body.page-home .nav-main {
   border-bottom-color: #b8c9d9;
@@ -66,18 +62,19 @@ body {
 
 /* Thin utility strip */
 .top-bar {
-  background: #e2e8f0;
-  color: #334155;
+  background: #0d2236;
+  color: rgba(255,255,255,0.75);
   font-size: 0.8rem;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 .top-bar a {
-  color: #1e3a5f;
+  color: rgba(255,255,255,0.85);
   text-decoration: none;
 }
 
 .top-bar a:hover {
+  color: #fff;
   text-decoration: underline;
 }
 
