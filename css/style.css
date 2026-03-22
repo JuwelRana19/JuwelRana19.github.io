@@ -614,6 +614,10 @@ footer.site {
 .slide-bg-2 { background: linear-gradient(135deg, #0d3347, #2a9d8f); }
 .slide-bg-3 { background: linear-gradient(135deg, #162b40, #1b8a9a); }
 .slide-bg-4 { background: linear-gradient(135deg, #0f2d45, #176d7e); }
+.slide-bg-5 { background: linear-gradient(135deg, #123a52, #0d6b6b); }
+.slide-bg-6 { background: linear-gradient(135deg, #1a3a4a, #1a7a8a); }
+.slide-bg-7 { background: linear-gradient(135deg, #0e3048, #2a8d7f); }
+.slide-bg-8 { background: linear-gradient(135deg, #152f42, #156b7a); }
 
 /* Photos fill the slide naturally */
 .slide img {
