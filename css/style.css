@@ -446,6 +446,58 @@ a:hover {
   }
 }
 
+/* About page — portrait + biography */
+.about-page .about-lead {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.about-page .about-portrait {
+  margin: 0;
+  justify-self: center;
+}
+
+.about-page .about-portrait-img {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 6px 24px rgba(15, 23, 42, 0.12);
+}
+
+.about-page .about-name-line {
+  font-size: 1.1rem;
+  margin-top: 0;
+}
+
+.about-page .about-intro p {
+  margin-bottom: 0.85rem;
+  line-height: 1.65;
+}
+
+.about-page h2 {
+  font-size: 1.15rem;
+  margin: 1.75rem 0 0.65rem;
+  color: var(--text);
+}
+
+@media (min-width: 768px) {
+  .about-page .about-lead {
+    grid-template-columns: minmax(200px, 260px) 1fr;
+    gap: 2.25rem;
+    align-items: start;
+  }
+
+  .about-page .about-portrait {
+    justify-self: start;
+  }
+}
+
 header.site {
   border-bottom: none;
   margin-bottom: 0;
