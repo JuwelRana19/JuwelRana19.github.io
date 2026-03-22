@@ -231,18 +231,19 @@ body {
   border: 3px solid rgba(255, 255, 255, 0.2);
 }
 
+/* Hero with portrait + text (two columns on wide screens) */
 @media (min-width: 900px) {
-  .site-banner-grid {
+  .site-banner-grid:not(.site-banner-grid--text-only) {
     grid-template-columns: minmax(0, 1fr) minmax(200px, 300px);
     gap: 2.5rem;
     align-items: center;
   }
 
-  .site-banner-text {
+  .site-banner-grid:not(.site-banner-grid--text-only) .site-banner-text {
     text-align: left;
   }
 
-  .site-banner-grid .site-banner-tagline {
+  .site-banner-grid:not(.site-banner-grid--text-only) .site-banner-tagline {
     margin-left: 0;
     margin-right: 0;
     max-width: 38rem;
@@ -251,6 +252,25 @@ body {
   .site-banner-photo {
     justify-self: end;
     max-width: 300px;
+  }
+}
+
+/* Hero text only — full width, centered */
+.site-banner-grid--text-only {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 900px) {
+  .site-banner-grid--text-only .site-banner-text {
+    text-align: center;
+    max-width: 44rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .site-banner-grid--text-only .site-banner-tagline {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
