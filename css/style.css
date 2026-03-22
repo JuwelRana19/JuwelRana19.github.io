@@ -1,0 +1,167 @@
+/* Minimal academic personal site — tweak colors/fonts below */
+
+:root {
+  --text: #1a1a1a;
+  --muted: #5c5c5c;
+  --link: #0b57d0;
+  --link-hover: #0842a0;
+  --border: #e2e2e2;
+  --bg: #fafafa;
+  --card: #ffffff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 17px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  line-height: 1.55;
+  color: var(--text);
+  background: var(--bg);
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+.wrap {
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+}
+
+header.site {
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2rem;
+  padding-bottom: 1.25rem;
+}
+
+header.site h1 {
+  margin: 0 0 0.35rem;
+  font-size: 1.75rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+.tagline {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.layout {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr) 14rem;
+    align-items: start;
+  }
+}
+
+main p {
+  margin: 0 0 1rem;
+}
+
+.bio p {
+  margin: 0 0 1rem;
+}
+
+.bio p:last-child {
+  margin-bottom: 0;
+}
+
+.profile-links {
+  margin: 0.75rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.75rem;
+  font-size: 0.95rem;
+}
+
+.profile-links li {
+  display: inline;
+}
+
+.profile-links li:not(:last-child)::after {
+  content: " ·";
+  color: var(--muted);
+}
+
+main h2 {
+  font-size: 1.1rem;
+  font-weight: 650;
+  margin: 1.75rem 0 0.65rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem 1.1rem;
+}
+
+aside.card h2 {
+  margin-top: 0;
+  font-size: 0.85rem;
+}
+
+aside ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+aside li {
+  margin-bottom: 0.45rem;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-list li {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+footer.site {
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
