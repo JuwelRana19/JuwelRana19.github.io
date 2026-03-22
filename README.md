@@ -38,8 +38,11 @@ git push origin main
 
 | Path | Purpose |
 |------|---------|
-| `index.html` | Home page |
-| `research.html` | Selected publications |
+| `index.html` | Home page (hero + portrait) |
+| `research.html` | Publications |
+| `people.html` | Collaborators & networks (starter text) |
+| `teaching.html` | Teaching & workshops (starter text) |
+| `img/portrait.svg` | Default hero image (monogram). Replace with **`img/portrait.jpg`** and update `index.html` if you prefer a photo. |
 | `css/style.css` | Styles |
 | `doc/` | Add `CV.pdf` for a downloadable CV |
 | `.nojekyll` | Serve plain HTML (no Jekyll) |
