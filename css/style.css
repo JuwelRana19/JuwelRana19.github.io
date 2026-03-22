@@ -405,6 +405,40 @@ body {
   font-weight: 700;
 }
 
+/* Nested flyout under Research → theme */
+.nav-links .has-dropdown-nested {
+  position: relative;
+}
+
+.nav-links .has-dropdown-nested > a::after {
+  content: " ▸";
+  font-size: 0.65em;
+  opacity: 0.65;
+}
+
+.nav-links .dropdown--nested {
+  display: none;
+  position: absolute;
+  left: calc(100% + 2px);
+  top: 0;
+  transform: none;
+  min-width: 11rem;
+  margin: 0;
+  padding: 0.35rem 0;
+  list-style: none;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-top: 2px solid var(--link);
+  border-radius: 0 5px 5px 5px;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.12);
+  z-index: 110;
+}
+
+.nav-links .has-dropdown-nested:hover .dropdown--nested,
+.nav-links .has-dropdown-nested:focus-within .dropdown--nested {
+  display: block;
+}
+
 .skip-link {
   position: absolute;
   left: -9999px;
