@@ -84,12 +84,52 @@ body {
 .top-bar-inner {
   max-width: 70rem;
   margin: 0 auto;
-  padding: 0.4rem 1.25rem;
+  padding: 0.3rem 1.25rem;
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  gap: 0.35rem 1rem;
+  justify-content: space-between;
+  gap: 0.5rem;
 }
+
+.top-bar-left {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.75rem;
+}
+
+.top-bar-icons {
+  display: flex;
+  align-items: center;
+  gap: 0.28rem;
+  flex-shrink: 0;
+}
+
+.top-bar-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: #fff !important;
+  text-decoration: none !important;
+  transition: opacity 0.18s, transform 0.15s;
+}
+
+.top-bar-icons a:hover {
+  opacity: 0.82;
+  transform: translateY(-1px);
+}
+
+.icon-orcid       { background: #a6ce39; }
+.icon-pubmed      { background: #2c6fad; }
+.icon-scholar     { background: #4285f4; }
+.icon-researchgate { background: #00ccbb; }
+.icon-github      { background: #24292e; }
+.icon-linkedin    { background: #0077b5; }
+.icon-twitter     { background: #1a1a1a; }
 
 .top-bar-inner .sep {
   opacity: 0.45;
