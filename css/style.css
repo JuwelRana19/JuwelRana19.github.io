@@ -105,6 +105,7 @@ body {
   flex-shrink: 0;
 }
 
+.top-bar-left a,
 .top-bar-icons a {
   display: inline-flex;
   align-items: center;
@@ -123,6 +124,7 @@ body {
   transform: translateY(-1px);
 }
 
+.icon-email       { background: #475569; }
 .icon-orcid       { background: #a6ce39; }
 .icon-pubmed      { background: #2c6fad; }
 .icon-scholar     { background: #4285f4; }
