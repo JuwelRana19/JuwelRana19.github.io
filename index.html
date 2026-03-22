@@ -27,10 +27,10 @@
           <a href="https://pubmed.ncbi.nlm.nih.gov/?term=Rana+Juwel" class="icon-pubmed" aria-label="PubMed" title="PubMed"><i class="ai ai-pubmed"></i></a>
           <a href="https://scholar.google.ca/citations?user=EF6w_pYAAAAJ&hl=en&oi=ao" class="icon-scholar" aria-label="Google Scholar" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
           <a href="https://www.researchgate.net/profile/Juwel-Rana" class="icon-researchgate" aria-label="ResearchGate" title="ResearchGate"><i class="ai ai-researchgate"></i></a>
-          <a href="https://github.com/JuwelRana19" class="icon-github" aria-label="GitHub" title="GitHub"><i class="fab fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/juwelrana" class="icon-linkedin" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://x.com/EpiJuwel" class="icon-twitter" aria-label="X / Twitter" title="X / Twitter"><i class="fab fa-x-twitter"></i></a>
-          <a href="https://www.youtube.com/@ResearchQuestwithJuwelPatricia" class="icon-youtube" aria-label="YouTube" title="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="https://github.com/JuwelRana19" class="icon-github" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/juwelrana" class="icon-linkedin" aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://x.com/EpiJuwel" class="icon-twitter" aria-label="X / Twitter" title="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://www.youtube.com/@ResearchQuestwithJuwelPatricia" class="icon-youtube" aria-label="YouTube" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
         </span>
       </div>
     </div>
@@ -38,14 +38,14 @@
       <div class="nav-inner">
         <ul class="nav-links">
           <li><a href="index.html" aria-current="page">Home</a></li>
-          <li><a href="index.html#about">About</a></li>
+          <li><a href="about.html">About</a></li>
           <li class="has-dropdown">
-            <a href="index.html#research">Research</a>
+            <a href="research.html">Research</a>
             <ul class="dropdown">
-              <li><a href="index.html#research">Causal Inference</a></li>
-              <li><a href="index.html#research">Mixture Analysis</a></li>
-              <li><a href="index.html#research">Environmental Epidemiology</a></li>
-              <li><a href="index.html#research">Perinatal Epidemiology</a></li>
+              <li><a href="research.html#causal-inference">Causal Inference</a></li>
+              <li><a href="research.html#mixture-analysis">Mixture Analysis</a></li>
+              <li><a href="research.html#environmental-epi">Environmental Epidemiology</a></li>
+              <li><a href="research.html#perinatal-epi">Perinatal Epidemiology</a></li>
             </ul>
           </li>
           <li class="has-dropdown">
@@ -60,7 +60,7 @@
           <li><a href="people.html">People</a></li>
           <li><a href="teaching.html">Teaching</a></li>
           <li><a href="kt.html">Knowledge Translation</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
     </nav>
@@ -94,9 +94,9 @@
       </div>
     </header>
 
-    <!-- ══ Photo slideshow (Benmarhnia-style) ══
-         Replace the img/slide-*.svg placeholders with your own photos.
-         Add or remove <li> items freely — JS adjusts automatically. -->
+    <!-- ══ Photo slideshow ══
+         Replace img/slide-*.svg with your own photos (jpg/png are fine).
+         Add or remove <li> items freely — the JS adjusts automatically. -->
     <section class="slideshow" aria-label="Photo gallery">
       <ul class="slideshow-track" id="slideshowTrack">
         <li class="slide active">
@@ -122,7 +122,6 @@
         var dotsEl = document.getElementById('slideshowDots');
         var slides = track.querySelectorAll('.slide');
         var current = 0, timer;
-        // Build dots
         slides.forEach(function (_, i) {
           var d = document.createElement('button');
           d.className = 'dot' + (i === 0 ? ' active' : '');
@@ -145,150 +144,16 @@
       })();
     </script>
 
-    <div class="wrap">
-      <div class="layout">
-        <main id="main">
-          <section id="about" class="bio">
-            <p>
-              <strong>Mr. Juwel Rana</strong> is the Founder and serves as the
-              <strong>Director of Research and Innovation</strong> at the
-              <a href="https://saistbd.org/">SAIST Foundation</a>. His journey
-              began during his undergraduate studies at the University of Dhaka,
-              where he laid the groundwork for the SAIST Foundation. Initially
-              taking shape as YRIDB and SAYRID on 15 July 2010, this endeavor was
-              fueled by the passion and collaboration of a dedicated group of
-              young researchers. He has pursued a dual Master of Public Health
-              (MPH) degree: European Master of Public Health (EMPH) from the
-              University of Sheffield, UK, and EMPH in Environmental and
-              Occupational Health Sciences from the EHESP School of Public
-              Health, France, under the Erasmus Mundus Scholarship. He also
-              completed an MSS and BSS in Sociology from the University of
-              Dhaka, Bangladesh. Before joining the Department of Public Health
-              at North South University, Mr. Juwel worked as a
-              <strong>J1 Research Scholar</strong> at the Department of
-              Biostatistics and Epidemiology at the University of Massachusetts
-              Amherst, USA.
-            </p>
-          </section>
-
-          <section id="research" class="bio">
-            <p>
-              Mr. Juwel Rana’s major scientific interests are to develop or
-              improve epidemiologic methods related to risk prediction, repeated
-              measures, multivariate analysis, causal mediation analysis, causal
-              inference, mixture analysis, simulation study, big data, and
-              application of machine learning approaches. He applies these
-              techniques in perinatal epidemiology (early childhood development,
-              developmental delays and disorders, child mortality), maternal
-              &amp; reproductive health, non-communicable diseases, and
-              environmental epidemiology.
-            </p>
-            <p>
-              He has published more than 60 research papers in peer-reviewed
-              journals such as <em>The Lancet</em>, <em>The Lancet Public
-              Health</em>, <em>Neuroepidemiology</em>, <em>Journal of
-              Epidemiology and Community Health</em>, <em>Alzheimer &amp;
-              Dementia</em>, <em>Scientific Reports</em>, <em>International Journal of
-              Environmental Research, Exposure and Health</em>,
-              <em>Reproductive Health</em>, <em>BMC Medicine</em>,
-              <em>Frontiers in Medicine</em>, and <em>Journal of the American
-              College of Cardiology</em>. He serves as the managing editor of the
-              <em>South Asian Journal of Social Sciences (SAJSS)</em>, regional
-              editor of <em>Global Dialogue</em>, and member of the reviewer board
-              in respective journals in the field, including the
-              <em>International Journal of Environmental Research</em>,
-              <em>Scientific Reports</em>, <em>BMJ Environmental
-              &amp; Occupational Medicine</em>, <em>Public Health Nutrition</em>,
-              <em>Brain and Behavior</em>, and <em>PLOS One</em>. He is an active
-              member of professional networks such as the Society for
-              Epidemiologic Research and the International Society for
-              Environmental Epidemiology.
-            </p>
-          </section>
-
-          <section id="profiles" aria-labelledby="profiles-heading">
-          <h2 id="profiles-heading">Research profiles &amp; code</h2>
-          <p>Papers and identifiers:</p>
-          <ul class="profile-links">
-            <li><a href="https://pubmed.ncbi.nlm.nih.gov/?term=Rana+Juwel">PubMed</a></li>
-            <li>
-              <a href="https://orcid.org/0000-0001-5597-664X">ORCID</a>
-            </li>
-            <li>
-              <a
-                href="https://scholar.google.ca/citations?user=EF6w_pYAAAAJ&amp;hl=en&amp;oi=ao"
-                >Google Scholar</a
-              >
-            </li>
-            <li>
-              <a href="https://www.researchgate.net/profile/Juwel-Rana"
-                >ResearchGate</a
-              >
-            </li>
-          </ul>
-          <p style="margin-top: 0.75rem">Code and professional profiles:</p>
-          <ul class="profile-links">
-            <li>
-              <a href="https://github.com/JuwelRana19">GitHub</a>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/in/juwelrana">LinkedIn</a>
-            </li>
-            <li>
-              <a href="https://x.com/EpiJuwel">X / Twitter</a>
-            </li>
-          </ul>
-          </section>
-
-          <section id="publications" aria-labelledby="publications-heading">
-          <h2 id="publications-heading">Publications</h2>
-          <p>
-            Selected publications are listed on the
-            <a href="research.html">research page</a>. Add your CV as
-            <code>doc/CV.pdf</code> in this repository to enable the
-            <a href="doc/CV.pdf">CV (PDF)</a> link.
-          </p>
-          </section>
-        </main>
-
-        <aside class="card" id="contact" aria-label="Contact and affiliation">
-          <h2>Contact</h2>
-          <ul class="contact-list">
-            <li>
-              <a href="tel:+8801793593339">+880 1793-593339</a>
-            </li>
-            <li>
-              <a href="https://saistbd.org/">SAIST Foundation</a> (email &amp;
-              inquiries)
-            </li>
-            <li>
-              SEL Centre, 29 West Panthapath, near Aah Towfiq Road, Bir Uttam
-              Kazi Nuruzzaman Rd<br />
-              Dhaka 1205, Bangladesh
-            </li>
-          </ul>
-          <h2>Affiliation</h2>
-          <p style="margin: 0; font-size: 0.95rem">
-            Founder &amp; Director of Research and Innovation<br />
-            SAIST Foundation<br />
-            Department of Public Health<br />
-            North South University<br />
-            Dhaka, Bangladesh
-          </p>
-        </aside>
-      </div>
-
+    <div id="main" class="wrap">
       <footer class="site">
         <p>
-          © <span id="y"></span> Juwel Rana.
+          &copy; <span id="y"></span> Juwel Rana.
           <a href="https://saistbd.org/TeamSaist/FullBio/Juwel">Bio on SAIST</a>
-          ·
+          &middot;
           <a href="https://github.com/JuwelRana19/JuwelRana19.github.io">Site source</a>
         </p>
       </footer>
     </div>
-    <script>
-      document.getElementById("y").textContent = new Date().getFullYear();
-    </script>
+    <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
   </body>
 </html>

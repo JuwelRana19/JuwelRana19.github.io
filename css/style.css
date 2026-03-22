@@ -84,7 +84,7 @@ body {
 .top-bar-inner {
   max-width: 70rem;
   margin: 0 auto;
-  padding: 0.3rem 1.25rem;
+  padding: 0.35rem 1.25rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -109,10 +109,10 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 26px;
-  height: 26px;
+  width: 30px;
+  height: 30px;
   border-radius: 4px;
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: #fff !important;
   text-decoration: none !important;
   transition: opacity 0.18s, transform 0.15s;
