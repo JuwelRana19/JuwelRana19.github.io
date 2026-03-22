@@ -1,21 +1,42 @@
-# JuwelRana19.github.io
+# juwelrana.github.io
 
 Personal academic site for **Juwel Rana** (static HTML + CSS).
 
-**Live site:** [https://juwelrana19.github.io/](https://juwelrana19.github.io/)
+## Live site (this repository)
 
-This repository must be named **`JuwelRana19.github.io`** (same as your GitHub username) so GitHub Pages serves it at the **root** URL above, not under a subpath.
+Repository: **[`JuwelRana19/juwelrana.github.io`](https://github.com/JuwelRana19/juwelrana.github.io)**
 
-## One-time GitHub setup (rename repo)
+**Project site URL (works after you fix Pages — see below):**  
+**[https://juwelrana19.github.io/juwelrana.github.io/](https://juwelrana19.github.io/juwelrana.github.io/)**
 
-If this repo was previously named `juwelrana.github.io`:
+**Shorter URL (optional):** **`https://juwelrana19.github.io/`** only works if you create or rename the repo to **`JuwelRana19.github.io`** (must match your username). As of last check, **`JuwelRana19/JuwelRana19.github.io`** did not exist on GitHub, so the root URL returns **404** until you rename or create that repo.
 
-1. On GitHub open **Settings → General**.
-2. Under **Repository name**, change it to **`JuwelRana19.github.io`** → **Rename**.
-3. **Settings → Pages**: ensure **Branch** = **`main`**, folder **`/ (root)`**.
-4. Wait ~2 minutes, then open **https://juwelrana19.github.io/**
+### Last verification (automated check)
 
-## What’s in this repo
+| URL | Result |
+|-----|--------|
+| `https://juwelrana19.github.io/` | **404** — no user-site repo published |
+| `https://juwelrana19.github.io/juwelrana.github.io/` | Still the **Jekyll “Welcome to GitHub Pages”** placeholder → Pages is **not** building from **`main`** yet |
+| `https://github.com/JuwelRana19/JuwelRana19.github.io` | **Repo not found** until you rename |
+
+Your local files in this folder are fine; **only GitHub settings** need to be updated (no repo rename is possible from Cursor).
+
+## GitHub Pages settings (required — do this first)
+
+1. Open **[Settings → Pages](https://github.com/JuwelRana19/juwelrana.github.io/settings/pages)** for this repo.
+2. **Source**: Deploy from a branch  
+3. **Branch**: **`main`**, folder **`/ (root)`** — **not** `gh-pages`  
+4. Save and wait ~1–2 minutes. Reload the project URL above; you should see your bio page instead of the Jekyll template.
+
+Optional: delete the **`gh-pages`** branch if you no longer need the old Jekyll placeholder.
+
+## Optional: short URL at the account root later
+
+If you want **`https://juwelrana19.github.io/`** with no subpath, rename this repository on GitHub to **`JuwelRana19.github.io`** (Settings → General → Repository name). Then update your local remote:
+
+`git remote set-url origin https://github.com/JuwelRana19/JuwelRana19.github.io.git`
+
+## Repo layout
 
 | Path | Purpose |
 |------|---------|
@@ -23,12 +44,12 @@ If this repo was previously named `juwelrana.github.io`:
 | `research.html` | Selected publications |
 | `css/style.css` | Styles |
 | `doc/` | Add `CV.pdf` for a downloadable CV |
-| `.nojekyll` | Static HTML (no Jekyll) |
+| `.nojekyll` | Serve plain HTML (no Jekyll) |
 
-## Local git remote
+## Local clone / push
 
-After renaming on GitHub, your local remote should be:
+```text
+https://github.com/JuwelRana19/juwelrana.github.io.git
+```
 
-`https://github.com/JuwelRana19/JuwelRana19.github.io.git`
-
-Update with: `git remote set-url origin https://github.com/JuwelRana19/JuwelRana19.github.io.git`
+Branch: **`main`**.
