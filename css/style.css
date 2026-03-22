@@ -486,16 +486,20 @@ a:hover {
   color: var(--text);
 }
 
-/* Publications page — external source list with icons */
+/* Publications page — external source list with icons (horizontal row) */
 .pub-source-list {
   list-style: none;
   padding: 0;
   margin: 0.75rem 0 0.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem 1.35rem;
 }
 
 .pub-source-list li {
-  margin-bottom: 0.55rem;
-  padding-left: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .pub-source-link {
