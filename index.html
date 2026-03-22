@@ -66,64 +66,60 @@
       </div>
     </nav>
 
-    <!-- ── Hero slideshow (replaces separate banner + old slider) ──
-         HOW TO ADD PHOTOS: on any <li>, add  style="background-image:url('img/photo.jpg')"
-         Recommended: 1400 × 520 px landscape photos. -->
-    <section class="slideshow" aria-label="Research highlights">
-      <ul class="slideshow-track" id="slideshowTrack">
+    <!-- ── Hero banner ── -->
+    <header class="site-banner">
+      <div class="site-banner-grid">
+        <div class="site-banner-text">
+          <p class="site-banner-kicker">Epidemiology · Causal inference · Environmental health</p>
+          <h1 class="site-banner-title">Juwel Rana, MPH (Dual)</h1>
+          <p class="site-banner-tagline">
+            Methods for mixture analysis, longitudinal data, and policy-relevant evidence
+            for maternal–child health and environmental epidemiology.
+          </p>
+          <p class="site-banner-affil">
+            <a href="https://www.mcgill.ca/">McGill University</a>, Montréal, Canada ·
+            <a href="https://saistbd.org/">SAIST Foundation</a> ·
+            Department of Public Health,
+            <a href="https://www.northsouth.edu/">North South University</a>, Dhaka
+          </p>
+        </div>
+        <div class="site-banner-photo">
+          <!-- Replace src with img/portrait.jpg once you have a head-and-shoulders photo -->
+          <img class="site-banner-img" src="img/portrait.svg" width="280" height="340" alt="Juwel Rana" loading="eager" />
+        </div>
+      </div>
+    </header>
 
-        <!-- Slide 1: name / intro — add photo via style attribute when ready -->
-        <li class="slide slide-bg-1 active">
-          <div class="slide-overlay"></div>
-          <div class="slide-text slide-text--intro">
-            <span class="slide-kicker">Epidemiology · Causal Inference · Environmental Health</span>
-            <h1 class="slide-title slide-name">Juwel Rana, MPH (Dual)</h1>
-            <p class="slide-desc">Methods for mixture analysis, longitudinal data, and policy-relevant evidence for maternal–child health and environmental epidemiology.</p>
-            <p class="slide-affil">
-              <a href="https://www.mcgill.ca/">McGill University</a> ·
-              <a href="https://saistbd.org/">SAIST Foundation</a> ·
-              <a href="https://www.northsouth.edu/">North South University</a>
-            </p>
-          </div>
-        </li>
-
-        <!-- Slide 2 — add photo: style="background-image:url('img/slide-2.jpg')" -->
-        <li class="slide slide-bg-2">
-          <div class="slide-overlay"></div>
-          <div class="slide-text">
-            <span class="slide-kicker">Methods &amp; Methodology</span>
-            <h2 class="slide-title">Causal Inference &amp; Mixture Analysis</h2>
-            <p class="slide-desc">Novel epidemiologic methods for complex multi-exposure analysis, causal mediation, and longitudinal models in environmental and perinatal epidemiology.</p>
-            <a href="research.html" class="slide-link">Explore research &#8594;</a>
-          </div>
-        </li>
-
-        <!-- Slide 3 — add photo: style="background-image:url('img/slide-3.jpg')" -->
-        <li class="slide slide-bg-3">
-          <div class="slide-overlay"></div>
-          <div class="slide-text">
-            <span class="slide-kicker">Environmental Health</span>
-            <h2 class="slide-title">Environmental Epidemiology</h2>
-            <p class="slide-desc">Impacts of air pollution, chemical mixtures, and environmental stressors on maternal–child health and non-communicable diseases in low-resource settings.</p>
-            <a href="research.html" class="slide-link">Explore research &#8594;</a>
-          </div>
-        </li>
-
-        <!-- Slide 4 — add photo: style="background-image:url('img/slide-4.jpg')" -->
-        <li class="slide slide-bg-4">
-          <div class="slide-overlay"></div>
-          <div class="slide-text">
-            <span class="slide-kicker">Research Impact</span>
-            <h2 class="slide-title">60+ Peer-Reviewed Publications</h2>
-            <p class="slide-desc">Published in <em>The Lancet</em>, <em>The Lancet Public Health</em>, <em>BMC Medicine</em>, <em>Alzheimer &amp; Dementia</em>, and other leading global health journals.</p>
-            <a href="research.html#selected-publications" class="slide-link">View publications &#8594;</a>
-          </div>
-        </li>
-
-      </ul>
-      <div class="slideshow-dots" id="slideshowDots" aria-hidden="true"></div>
-      <button class="slideshow-btn slideshow-prev" aria-label="Previous slide">&#8249;</button>
-      <button class="slideshow-btn slideshow-next" aria-label="Next slide">&#8250;</button>
+    <!-- ── Photo gallery slider ──────────────────────────────────────────
+         Uses a natural 16:9 ratio — any standard landscape phone/camera
+         photo fits perfectly without cropping.
+         TO ADD YOUR PHOTOS: rename them slide-1.jpg, slide-2.jpg … and
+         drop them into the img/ folder, then change each src below.
+         You can also add as many <li> items as you like. -->
+    <section class="slideshow-wrap">
+      <div class="slideshow" aria-label="Photo gallery">
+        <ul class="slideshow-track" id="slideshowTrack">
+          <li class="slide slide-bg-1 active">
+            <!-- <img src="img/slide-1.jpg" alt="Conference 2024" /> -->
+            <div class="slide-placeholder"><span>Add a photo: img/slide-1.jpg</span></div>
+          </li>
+          <li class="slide slide-bg-2">
+            <!-- <img src="img/slide-2.jpg" alt="Fieldwork" /> -->
+            <div class="slide-placeholder"><span>Add a photo: img/slide-2.jpg</span></div>
+          </li>
+          <li class="slide slide-bg-3">
+            <!-- <img src="img/slide-3.jpg" alt="Team" /> -->
+            <div class="slide-placeholder"><span>Add a photo: img/slide-3.jpg</span></div>
+          </li>
+          <li class="slide slide-bg-4">
+            <!-- <img src="img/slide-4.jpg" alt="Workshop" /> -->
+            <div class="slide-placeholder"><span>Add a photo: img/slide-4.jpg</span></div>
+          </li>
+        </ul>
+        <div class="slideshow-dots" id="slideshowDots" aria-hidden="true"></div>
+        <button class="slideshow-btn slideshow-prev" aria-label="Previous slide">&#8249;</button>
+        <button class="slideshow-btn slideshow-next" aria-label="Next slide">&#8250;</button>
+      </div>
     </section>
     <script>
       (function () {

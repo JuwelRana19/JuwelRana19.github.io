@@ -552,12 +552,25 @@ footer.site {
   color: var(--muted);
 }
 
-/* ── Slideshow ─────────────────────────────────────────────────── */
+/* ── Photo gallery slideshow ───────────────────────────────────── */
+
+/* Outer wrapper constrains width and adds breathing room */
+.slideshow-wrap {
+  background: #f4f7fb;
+  padding: 2rem 0;
+}
+
+/* The slider itself uses a 16:9 ratio — matches any standard
+   landscape photo from a phone, camera, or conference shot */
 .slideshow {
   position: relative;
-  width: 100%;
-  height: 420px;
+  width: 92%;
+  max-width: 960px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.18);
 }
 
 .slideshow-track {
@@ -572,81 +585,38 @@ footer.site {
   inset: 0;
   opacity: 0;
   transition: opacity 0.9s ease;
-  background-size: cover;
-  background-position: center;
 }
 
 .slide.active { opacity: 1; }
 
-/* Solid fallback gradients — visible when no photo is set */
-.slide-bg-1 { background-color: #0e3a52; }
-.slide-bg-2 { background-color: #0d3347; }
-.slide-bg-3 { background-color: #13354d; }
-.slide-bg-4 { background-color: #102e47; }
+/* Gradient backgrounds shown while no photo is set */
+.slide-bg-1 { background: linear-gradient(135deg, #0a2a3d, #1a6877); }
+.slide-bg-2 { background: linear-gradient(135deg, #0d3347, #2a9d8f); }
+.slide-bg-3 { background: linear-gradient(135deg, #162b40, #1b8a9a); }
+.slide-bg-4 { background: linear-gradient(135deg, #0f2d45, #176d7e); }
 
-/* Dark gradient overlay — ensures text is always readable over any photo */
-.slide-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    105deg,
-    rgba(8, 28, 44, 0.82) 0%,
-    rgba(8, 28, 44, 0.55) 55%,
-    rgba(8, 28, 44, 0.15) 100%
-  );
-  z-index: 1;
+/* Photos fill the slide naturally */
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-/* Text sits above the overlay */
-.slide-text {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
+/* Placeholder shown until real photos are added */
+.slide-placeholder {
+  width: 100%;
+  height: 100%;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  padding: 2.5rem max(1.5rem, calc(50% - 34rem));
 }
 
-.slide-kicker {
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.62);
-  margin-bottom: 0.55rem;
-}
-
-.slide-title {
-  font-size: clamp(1.4rem, 3vw, 2.1rem);
-  font-weight: 600;
-  color: #fff;
-  margin: 0 0 0.75rem;
-  line-height: 1.2;
-}
-
-.slide-desc {
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.82);
-  line-height: 1.65;
-  margin: 0 0 1.2rem;
-  max-width: 54ch;
-}
-
-.slide-link {
-  display: inline-block;
-  font-size: 0.88rem;
-  font-weight: 500;
-  color: #7de8d8;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(125, 232, 216, 0.4);
-  padding-bottom: 2px;
-  transition: color 0.2s, border-color 0.2s;
-}
-
-.slide-link:hover {
-  color: #fff;
-  border-color: rgba(255, 255, 255, 0.55);
+.slide-placeholder span {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-style: italic;
+  letter-spacing: 0.03em;
 }
 
 .slideshow-btn {
@@ -697,9 +667,9 @@ footer.site {
   background: #fff;
 }
 
-@media (max-width: 680px) {
-  .slideshow { height: 280px; }
-  .slide-desc { display: none; }
+@media (max-width: 600px) {
+  .slideshow { width: 100%; border-radius: 0; }
+  .slideshow-wrap { padding: 1rem 0; }
 }
 
 .sr-only {
@@ -711,25 +681,6 @@ footer.site {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
-}
-
-/* ── Slide intro variant (first slide = name/hero) ── */
-.slide-text--intro .slide-name {
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
-  font-weight: 700;
-  margin-bottom: 0.6rem;
-}
-
-.slide-affil {
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.72);
-  margin-top: 0.25rem;
-}
-
-.slide-affil a {
-  color: rgba(255, 255, 255, 0.9);
-  text-decoration: underline;
-  text-decoration-color: rgba(255, 255, 255, 0.3);
 }
 
 /* ── Homepage white content sections ── */
