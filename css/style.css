@@ -66,8 +66,10 @@ body {
   user-select: none;
 }
 
-/* Hero banner (lab-style) */
+/* Hero banner (lab-style) — sits below the white nav, full width */
 .site-banner {
+  position: relative;
+  z-index: 1;
   background: linear-gradient(
     165deg,
     var(--banner-bg) 0%,
@@ -75,7 +77,8 @@ body {
   );
   color: var(--banner-text);
   text-align: center;
-  padding: 2.25rem 1.25rem 2.5rem;
+  padding: 2.5rem 1.25rem 2.75rem;
+  margin-top: 0;
   border-bottom: 3px solid var(--accent);
 }
 
@@ -155,7 +158,7 @@ body {
   width: 100%;
   height: auto;
   border-radius: 6px;
-  box-shadow: 0 14px 44px rgba(0, 0, 0, 0.38);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.28);
   border: 3px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -198,22 +201,24 @@ body {
   color: rgba(248, 250, 252, 0.88);
 }
 
-/* Main navigation — centered, uppercase */
+/* Main navigation — full-width bar above the hero (does not overlap it) */
 .nav-main {
-  background: var(--card);
-  border-bottom: 1px solid var(--border);
-  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+  position: relative;
+  z-index: 10;
+  background: #ffffff;
+  border-bottom: 1px solid #cbd5e1;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
 .nav-inner {
   max-width: 70rem;
   margin: 0 auto;
-  padding: 0;
+  padding: 0.35rem 0 0.45rem;
 }
 
 .nav-links {
   margin: 0;
-  padding: 0.15rem 0.5rem;
+  padding: 0.25rem 0.5rem 0.35rem;
   list-style: none;
   display: flex;
   flex-wrap: wrap;
@@ -275,12 +280,19 @@ a:hover {
 
 .wrap {
   max-width: 56rem;
-  margin: 0 auto;
-  padding: 2rem 1.25rem 3rem;
+  margin: 1.75rem auto 0;
+  padding: 2rem 1.35rem 2.75rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
 }
 
-body > .wrap {
-  padding-top: 2rem;
+@media (max-width: 600px) {
+  .wrap {
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+  }
 }
 
 header.site {
