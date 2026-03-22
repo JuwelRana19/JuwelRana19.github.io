@@ -863,10 +863,11 @@ footer.site {
 }
 
 .research-card h3 {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 600;
   margin: 0 0 0.5rem;
   color: var(--text);
+  line-height: 1.35;
 }
 
 .research-card p {
