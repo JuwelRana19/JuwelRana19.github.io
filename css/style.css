@@ -124,7 +124,7 @@ body {
   transform: translateY(-1px);
 }
 
-.icon-email       { background: #475569; }
+.icon-email       { background: #ea4335; width: 36px; height: 36px; font-size: 1.2rem; }
 .icon-orcid       { background: #a6ce39; }
 .icon-pubmed      { background: #2c6fad; }
 .icon-scholar     { background: #4285f4; }
