@@ -15,6 +15,36 @@
   --accent: #c45c26;
 }
 
+/* Homepage — cooler blues + teal accent (other pages keep :root until we tune them) */
+body.page-home {
+  --text: #1a2332;
+  --muted: #5c6b7a;
+  --link: #0c648c;
+  --link-hover: #094a66;
+  --border: #d0dce8;
+  --bg: #eef3f8;
+  --card: #ffffff;
+  --banner-bg: #124560;
+  --banner-bg-end: #0a2a3d;
+  --banner-text: #f7fafc;
+  --nav-hover: #e3eef6;
+  --accent: #2a9d8f;
+}
+
+body.page-home .top-bar {
+  background: #dce6f0;
+  border-bottom-color: #c5d3e2;
+}
+
+body.page-home .nav-main {
+  border-bottom-color: #b8c9d9;
+}
+
+body.page-home .wrap {
+  border-color: #d0dce8;
+  box-shadow: 0 4px 22px rgba(10, 42, 61, 0.07);
+}
+
 *,
 *::before,
 *::after {
