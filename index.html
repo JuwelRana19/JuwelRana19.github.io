@@ -3,10 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Juwel Rana, MPH — Founder & Director of Research and Innovation, SAIST Foundation; public health and epidemiologic methods."
-    />
+    <meta name="description" content="Juwel Rana, MPH — Founder & Director of Research and Innovation, SAIST Foundation; public health and epidemiologic methods." />
     <title>Juwel Rana</title>
     <link rel="canonical" href="https://juwelrana19.github.io/" />
     <link rel="stylesheet" href="css/style.css" />
@@ -15,6 +12,8 @@
   </head>
   <body class="page-home">
     <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- ── Top bar ── -->
     <div class="top-bar">
       <div class="top-bar-inner">
         <span class="top-bar-left">
@@ -34,6 +33,8 @@
         </span>
       </div>
     </div>
+
+    <!-- ── Navigation ── -->
     <nav class="nav-main" aria-label="Main navigation">
       <div class="nav-inner">
         <ul class="nav-links">
@@ -64,46 +65,30 @@
         </ul>
       </div>
     </nav>
-    <header class="site-banner">
-      <div class="site-banner-grid">
-        <div class="site-banner-text">
-          <p class="site-banner-kicker">Epidemiology · causal inference · environmental health</p>
-          <h1 class="site-banner-title">Juwel Rana, MPH (Dual)</h1>
-          <p class="site-banner-tagline">
-            Methods for mixture analysis, longitudinal data, and policy-relevant evidence
-            for maternal–child health and environmental epidemiology.
-          </p>
-          <p class="site-banner-affil">
-            <a href="https://www.mcgill.ca/">McGill University</a>, Montréal, Canada ·
-            <a href="https://saistbd.org/">SAIST Foundation</a> ·
-            Department of Public Health,
-            <a href="https://www.northsouth.edu/">North South University</a>, Dhaka
-          </p>
-        </div>
-        <div class="site-banner-photo">
-          <!-- Replace src with img/portrait.jpg after you add a head-and-shoulders photo -->
-          <img
-            class="site-banner-img"
-            src="img/portrait.svg"
-            width="320"
-            height="400"
-            alt="Juwel Rana"
-            loading="lazy"
-          />
-        </div>
-      </div>
-    </header>
 
-    <!-- ══ Slideshow ══
-         HOW TO ADD YOUR OWN PHOTOS:
-         On any <li> below, add:  style="background-image: url('img/your-photo.jpg')"
-         The gradient overlay keeps the text readable on any photo.
-         Recommended photo size: 1400 × 520 px (landscape). -->
+    <!-- ── Hero slideshow (replaces separate banner + old slider) ──
+         HOW TO ADD PHOTOS: on any <li>, add  style="background-image:url('img/photo.jpg')"
+         Recommended: 1400 × 520 px landscape photos. -->
     <section class="slideshow" aria-label="Research highlights">
       <ul class="slideshow-track" id="slideshowTrack">
 
-        <!-- Slide 1 — add photo: style="background-image: url('img/slide-1.jpg')" -->
+        <!-- Slide 1: name / intro — add photo via style attribute when ready -->
         <li class="slide slide-bg-1 active">
+          <div class="slide-overlay"></div>
+          <div class="slide-text slide-text--intro">
+            <span class="slide-kicker">Epidemiology · Causal Inference · Environmental Health</span>
+            <h1 class="slide-title slide-name">Juwel Rana, MPH (Dual)</h1>
+            <p class="slide-desc">Methods for mixture analysis, longitudinal data, and policy-relevant evidence for maternal–child health and environmental epidemiology.</p>
+            <p class="slide-affil">
+              <a href="https://www.mcgill.ca/">McGill University</a> ·
+              <a href="https://saistbd.org/">SAIST Foundation</a> ·
+              <a href="https://www.northsouth.edu/">North South University</a>
+            </p>
+          </div>
+        </li>
+
+        <!-- Slide 2 — add photo: style="background-image:url('img/slide-2.jpg')" -->
+        <li class="slide slide-bg-2">
           <div class="slide-overlay"></div>
           <div class="slide-text">
             <span class="slide-kicker">Methods &amp; Methodology</span>
@@ -113,8 +98,8 @@
           </div>
         </li>
 
-        <!-- Slide 2 — add photo: style="background-image: url('img/slide-2.jpg')" -->
-        <li class="slide slide-bg-2">
+        <!-- Slide 3 — add photo: style="background-image:url('img/slide-3.jpg')" -->
+        <li class="slide slide-bg-3">
           <div class="slide-overlay"></div>
           <div class="slide-text">
             <span class="slide-kicker">Environmental Health</span>
@@ -124,24 +109,13 @@
           </div>
         </li>
 
-        <!-- Slide 3 — add photo: style="background-image: url('img/slide-3.jpg')" -->
-        <li class="slide slide-bg-3">
-          <div class="slide-overlay"></div>
-          <div class="slide-text">
-            <span class="slide-kicker">Perinatal &amp; Reproductive Health</span>
-            <h2 class="slide-title">Maternal &amp; Child Health</h2>
-            <p class="slide-desc">Childhood development, developmental delays, child mortality, and maternal health outcomes across South Asian and global low-resource populations.</p>
-            <a href="research.html" class="slide-link">Explore research &#8594;</a>
-          </div>
-        </li>
-
-        <!-- Slide 4 — add photo: style="background-image: url('img/slide-4.jpg')" -->
+        <!-- Slide 4 — add photo: style="background-image:url('img/slide-4.jpg')" -->
         <li class="slide slide-bg-4">
           <div class="slide-overlay"></div>
           <div class="slide-text">
             <span class="slide-kicker">Research Impact</span>
             <h2 class="slide-title">60+ Peer-Reviewed Publications</h2>
-            <p class="slide-desc">Published in <em>The Lancet</em>, <em>The Lancet Public Health</em>, <em>BMC Medicine</em>, <em>Alzheimer &amp; Dementia</em>, <em>Journal of the American College of Cardiology</em>, and other leading journals.</p>
+            <p class="slide-desc">Published in <em>The Lancet</em>, <em>The Lancet Public Health</em>, <em>BMC Medicine</em>, <em>Alzheimer &amp; Dementia</em>, and other leading global health journals.</p>
             <a href="research.html#selected-publications" class="slide-link">View publications &#8594;</a>
           </div>
         </li>
@@ -172,23 +146,143 @@
           dotsEl.children[current].classList.add('active');
           reset();
         }
-        function reset() { clearInterval(timer); timer = setInterval(function () { go(current + 1); }, 4500); }
+        function reset() { clearInterval(timer); timer = setInterval(function () { go(current + 1); }, 5000); }
         document.querySelector('.slideshow-prev').addEventListener('click', function () { go(current - 1); });
         document.querySelector('.slideshow-next').addEventListener('click', function () { go(current + 1); });
         reset();
       })();
     </script>
 
-    <div id="main" class="wrap">
-      <footer class="site">
-        <p>
-          &copy; <span id="y"></span> Juwel Rana.
-          <a href="https://saistbd.org/TeamSaist/FullBio/Juwel">Bio on SAIST</a>
-          &middot;
-          <a href="https://github.com/JuwelRana19/JuwelRana19.github.io">Site source</a>
-        </p>
-      </footer>
-    </div>
+    <!-- ── White content area (Benmarhnia-style) ── -->
+    <main id="main">
+
+      <!-- About intro -->
+      <section class="home-about">
+        <div class="home-container">
+          <div class="home-about-grid">
+            <div class="home-about-photo">
+              <!-- Replace with your portrait: change src to img/portrait.jpg -->
+              <img src="img/portrait.svg" alt="Juwel Rana" width="220" height="270" loading="lazy" />
+            </div>
+            <div class="home-about-body">
+              <h2 class="home-section-title">About</h2>
+              <p>
+                <strong>Juwel Rana</strong> is the Founder and Director of Research and Innovation at the
+                <a href="https://saistbd.org/">SAIST Foundation</a>, and a researcher at
+                <a href="https://www.mcgill.ca/">McGill University</a>. His work develops
+                and applies epidemiologic methods — causal inference, mixture analysis, and
+                longitudinal modelling — to maternal–child health and environmental exposures in
+                low-resource settings.
+              </p>
+              <p>
+                He holds a dual MPH (European Master of Public Health) from the University of
+                Sheffield and EHESP School of Public Health (Erasmus Mundus), and an MSS/BSS
+                in Sociology from the University of Dhaka. He previously served as a J1
+                Research Scholar at the University of Massachusetts Amherst.
+              </p>
+              <a href="about.html" class="home-cta">Full biography &#8594;</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Research areas -->
+      <section class="home-research">
+        <div class="home-container">
+          <h2 class="home-section-title home-section-title--center">Research Areas</h2>
+          <div class="research-cards">
+
+            <article class="research-card">
+              <div class="research-card-icon"><i class="fas fa-project-diagram"></i></div>
+              <h3>Causal Inference</h3>
+              <p>G-computation, inverse probability weighting, and mediation analysis for policy-relevant causal questions in epidemiology.</p>
+              <a href="research.html#causal-inference">Learn more &#8594;</a>
+            </article>
+
+            <article class="research-card">
+              <div class="research-card-icon"><i class="fas fa-flask"></i></div>
+              <h3>Mixture Analysis</h3>
+              <p>BKMR, WQS, and novel methods for multi-exposure chemical mixture effects on health outcomes.</p>
+              <a href="research.html#mixture-analysis">Learn more &#8594;</a>
+            </article>
+
+            <article class="research-card">
+              <div class="research-card-icon"><i class="fas fa-leaf"></i></div>
+              <h3>Environmental Epidemiology</h3>
+              <p>Air pollution, chemical stressors, and their impacts on maternal–child health and non-communicable diseases.</p>
+              <a href="research.html#environmental-epi">Learn more &#8594;</a>
+            </article>
+
+            <article class="research-card">
+              <div class="research-card-icon"><i class="fas fa-baby"></i></div>
+              <h3>Perinatal Epidemiology</h3>
+              <p>Childhood development, birth outcomes, developmental delays, and child mortality in low-resource South Asian settings.</p>
+              <a href="research.html#perinatal-epi">Learn more &#8594;</a>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats bar -->
+      <section class="home-stats" aria-label="Key numbers">
+        <div class="home-container">
+          <ul class="stats-list">
+            <li class="stats-item">
+              <span class="stats-num">60+</span>
+              <span class="stats-label">Peer-reviewed papers</span>
+            </li>
+            <li class="stats-item">
+              <span class="stats-num">3</span>
+              <span class="stats-label">Institutional affiliations</span>
+            </li>
+            <li class="stats-item">
+              <span class="stats-num">15+</span>
+              <span class="stats-label">Years of research</span>
+            </li>
+            <li class="stats-item">
+              <span class="stats-num">10+</span>
+              <span class="stats-label">Countries of collaboration</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ── Footer ── -->
+    <footer class="site-footer">
+      <div class="home-container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <strong>Juwel Rana</strong>
+            <p>McGill University, Montréal<br />SAIST Foundation, Dhaka<br />North South University, Dhaka</p>
+          </div>
+          <div class="footer-col">
+            <strong>Navigate</strong>
+            <ul>
+              <li><a href="about.html">About</a></li>
+              <li><a href="research.html">Research &amp; Publications</a></li>
+              <li><a href="people.html">People</a></li>
+              <li><a href="teaching.html">Teaching</a></li>
+              <li><a href="kt.html">Knowledge Translation</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <strong>Profiles</strong>
+            <ul>
+              <li><a href="https://orcid.org/0000-0001-5597-664X">ORCID</a></li>
+              <li><a href="https://scholar.google.ca/citations?user=EF6w_pYAAAAJ&hl=en&oi=ao">Google Scholar</a></li>
+              <li><a href="https://pubmed.ncbi.nlm.nih.gov/?term=Rana+Juwel">PubMed</a></li>
+              <li><a href="https://www.researchgate.net/profile/Juwel-Rana">ResearchGate</a></li>
+              <li><a href="https://github.com/JuwelRana19">GitHub</a></li>
+            </ul>
+          </div>
+        </div>
+        <p class="footer-copy">&copy; <span id="y"></span> Juwel Rana · <a href="https://saistbd.org/TeamSaist/FullBio/Juwel">Bio on SAIST</a> · <a href="https://github.com/JuwelRana19/JuwelRana19.github.io">Site source</a></p>
+      </div>
+    </footer>
     <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
   </body>
 </html>
