@@ -1,34 +1,34 @@
-# juwelrana.github.io
+# JuwelRana19.github.io
 
-Personal academic site for **Juwel Rana** (static HTML + CSS). Live site is published with [GitHub Pages](https://pages.github.com/).
+Personal academic site for **Juwel Rana** (static HTML + CSS).
+
+**Live site:** [https://juwelrana19.github.io/](https://juwelrana19.github.io/)
+
+This repository must be named **`JuwelRana19.github.io`** (same as your GitHub username) so GitHub Pages serves it at the **root** URL above, not under a subpath.
+
+## One-time GitHub setup (rename repo)
+
+If this repo was previously named `juwelrana.github.io`:
+
+1. On GitHub open **Settings → General**.
+2. Under **Repository name**, change it to **`JuwelRana19.github.io`** → **Rename**.
+3. **Settings → Pages**: ensure **Branch** = **`main`**, folder **`/ (root)`**.
+4. Wait ~2 minutes, then open **https://juwelrana19.github.io/**
 
 ## What’s in this repo
 
 | Path | Purpose |
 |------|---------|
-| `index.html` | Home page (bio, links, contact) |
+| `index.html` | Home page |
 | `research.html` | Selected publications |
 | `css/style.css` | Styles |
-| `doc/` | Add `CV.pdf` here if you want a downloadable CV |
-| `.nojekyll` | Tells GitHub Pages not to run Jekyll (plain static files) |
+| `doc/` | Add `CV.pdf` for a downloadable CV |
+| `.nojekyll` | Static HTML (no Jekyll) |
 
-## Publish the site
+## Local git remote
 
-1. Push these files to the **`master`** or **`main`** branch (repo root: `index.html` at top level).
-2. On GitHub: **Settings → Pages**.
-3. Under **Build and deployment**, set **Source** to **Deploy from a branch**, branch **`main`** or **`master`**, folder **`/ (root)`**, then **Save**.
+After renaming on GitHub, your local remote should be:
 
-After a minute or two, the site URL shown at the top of the Pages settings should load.
+`https://github.com/JuwelRana19/JuwelRana19.github.io.git`
 
-### User site URL (important)
-
-For a **user** site at `https://<username>.github.io`, the repository name must be **`<username>.github.io`** (same spelling as your GitHub username).
-
-- If your username is **`JuwelRana19`**, rename this repository to **`JuwelRana19.github.io`** so the site is served at **`https://juwelrana19.github.io`** (GitHub treats username case as case-insensitive for this URL).
-
-If you keep the name **`juwelrana.github.io`** without matching the username, Pages may treat it as a **project** site instead, with a URL like `https://<username>.github.io/juwelrana.github.io/`. Check the exact URL in **Settings → Pages** after the first successful deploy.
-
-## Optional
-
-- Delete any stray files from early experiments (for example an odd `.html` filename) so only the intended pages remain in the root.
-- Add `doc/CV.pdf` and the home page CV link will work.
+Update with: `git remote set-url origin https://github.com/JuwelRana19/JuwelRana19.github.io.git`
