@@ -47,7 +47,7 @@
           </li>
           <li><a href="people.html">People</a></li>
           <li><a href="teaching.html">Teaching</a></li>
-          <li><a href="index.html#profiles">Profiles</a></li>
+          <li><a href="kt.html">Knowledge Translation</a></li>
           <li><a href="index.html#contact">Contact</a></li>
         </ul>
       </div>
@@ -81,6 +81,58 @@
         </div>
       </div>
     </header>
+
+    <!-- ══ Photo slideshow (Benmarhnia-style) ══
+         Replace the img/slide-*.svg placeholders with your own photos.
+         Add or remove <li> items freely — JS adjusts automatically. -->
+    <section class="slideshow" aria-label="Photo gallery">
+      <ul class="slideshow-track" id="slideshowTrack">
+        <li class="slide active">
+          <img src="img/slide-1.svg" alt="Research — fieldwork or lab scene 1" loading="eager" />
+        </li>
+        <li class="slide">
+          <img src="img/slide-2.svg" alt="Research — fieldwork or lab scene 2" loading="lazy" />
+        </li>
+        <li class="slide">
+          <img src="img/slide-3.svg" alt="Research — fieldwork or lab scene 3" loading="lazy" />
+        </li>
+        <li class="slide">
+          <img src="img/slide-4.svg" alt="Research — fieldwork or lab scene 4" loading="lazy" />
+        </li>
+      </ul>
+      <div class="slideshow-dots" id="slideshowDots" aria-hidden="true"></div>
+      <button class="slideshow-btn slideshow-prev" aria-label="Previous slide">&#8249;</button>
+      <button class="slideshow-btn slideshow-next" aria-label="Next slide">&#8250;</button>
+    </section>
+    <script>
+      (function () {
+        var track = document.getElementById('slideshowTrack');
+        var dotsEl = document.getElementById('slideshowDots');
+        var slides = track.querySelectorAll('.slide');
+        var current = 0, timer;
+        // Build dots
+        slides.forEach(function (_, i) {
+          var d = document.createElement('button');
+          d.className = 'dot' + (i === 0 ? ' active' : '');
+          d.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+          d.addEventListener('click', function () { go(i); });
+          dotsEl.appendChild(d);
+        });
+        function go(n) {
+          slides[current].classList.remove('active');
+          dotsEl.children[current].classList.remove('active');
+          current = (n + slides.length) % slides.length;
+          slides[current].classList.add('active');
+          dotsEl.children[current].classList.add('active');
+          reset();
+        }
+        function reset() { clearInterval(timer); timer = setInterval(function () { go(current + 1); }, 4500); }
+        document.querySelector('.slideshow-prev').addEventListener('click', function () { go(current - 1); });
+        document.querySelector('.slideshow-next').addEventListener('click', function () { go(current + 1); });
+        reset();
+      })();
+    </script>
+
     <div class="wrap">
       <div class="layout">
         <main id="main">
