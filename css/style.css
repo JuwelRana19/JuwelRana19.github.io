@@ -8,6 +8,10 @@
   --border: #e2e2e2;
   --bg: #fafafa;
   --card: #ffffff;
+  /* SAIST-inspired institutional greens */
+  --saist-top: #0d3d2e;
+  --saist-nav-border: #c5ddd4;
+  --saist-nav-active: #0d3d2e;
 }
 
 *,
@@ -29,6 +33,116 @@ body {
   background: var(--bg);
 }
 
+/* —— SAIST-style top bar + main menu —— */
+.top-bar {
+  background: var(--saist-top);
+  color: #e8f5ef;
+  font-size: 0.85rem;
+}
+
+.top-bar a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.top-bar a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.top-bar-inner {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 0.45rem 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 1rem;
+}
+
+.top-bar-inner .sep {
+  opacity: 0.5;
+  user-select: none;
+}
+
+.nav-main {
+  background: var(--card);
+  border-bottom: 1px solid var(--saist-nav-border);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
+}
+
+.nav-inner {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 0.65rem 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1rem;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--saist-nav-active);
+  letter-spacing: -0.02em;
+}
+
+.brand:hover {
+  color: var(--saist-nav-active);
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.nav-links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem 0.15rem;
+}
+
+.nav-links li {
+  margin: 0;
+}
+
+.nav-links a {
+  display: block;
+  padding: 0.4rem 0.65rem;
+  border-radius: 4px;
+  color: var(--text);
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  background: rgba(13, 61, 46, 0.08);
+  color: var(--saist-nav-active);
+  text-decoration: none;
+}
+
+.nav-links a[aria-current="page"] {
+  background: rgba(13, 61, 46, 0.12);
+  color: var(--saist-nav-active);
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  z-index: 999;
+  padding: 0.5rem 1rem;
+  background: var(--saist-top);
+  color: #fff;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 0.5rem;
+}
+
 a {
   color: var(--link);
   text-decoration: none;
@@ -43,6 +157,10 @@ a:hover {
   max-width: 52rem;
   margin: 0 auto;
   padding: 2rem 1.25rem 3rem;
+}
+
+body > .wrap {
+  padding-top: 1.75rem;
 }
 
 header.site {

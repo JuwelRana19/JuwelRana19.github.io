@@ -12,6 +12,28 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="top-bar">
+      <div class="top-bar-inner">
+        <a href="tel:+8801793593339">+880 1793-593339</a>
+        <span class="sep">|</span>
+        <a href="https://saistbd.org/">SAIST Foundation</a>
+        <span class="sep">|</span>
+        <a href="https://github.com/JuwelRana19">GitHub</a>
+      </div>
+    </div>
+    <nav class="nav-main" aria-label="Main navigation">
+      <div class="nav-inner">
+        <a class="brand" href="index.html">Juwel Rana</a>
+        <ul class="nav-links">
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="research.html">Research &amp; publications</a></li>
+          <li><a href="index.html#profiles">Profiles</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
     <div class="wrap">
       <header class="site">
         <h1>Juwel Rana, MPH (Dual)</h1>
@@ -22,8 +44,8 @@
       </header>
 
       <div class="layout">
-        <main>
-          <div class="bio">
+        <main id="main">
+          <section id="about" class="bio">
             <p>
               <strong>Mr. Juwel Rana</strong> is the Founder and serves as the
               <strong>Director of Research and Innovation</strong> at the
@@ -76,9 +98,10 @@
               Epidemiologic Research and the International Society for
               Environmental Epidemiology.
             </p>
-          </div>
+          </section>
 
-          <h2>Research profiles &amp; code</h2>
+          <section id="profiles" aria-labelledby="profiles-heading">
+          <h2 id="profiles-heading">Research profiles &amp; code</h2>
           <p>Papers and identifiers:</p>
           <ul class="profile-links">
             <li><a href="https://pubmed.ncbi.nlm.nih.gov/?term=Rana+Juwel">PubMed</a></li>
@@ -109,17 +132,20 @@
               <a href="https://x.com/EpiJuwel">X / Twitter</a>
             </li>
           </ul>
+          </section>
 
-          <h2>Publications</h2>
+          <section id="publications" aria-labelledby="publications-heading">
+          <h2 id="publications-heading">Publications</h2>
           <p>
             Selected publications are listed on the
             <a href="research.html">research page</a>. Add your CV as
             <code>doc/CV.pdf</code> in this repository to enable the
             <a href="doc/CV.pdf">CV (PDF)</a> link.
           </p>
+          </section>
         </main>
 
-        <aside class="card" aria-label="Contact and affiliation">
+        <aside class="card" id="contact" aria-label="Contact and affiliation">
           <h2>Contact</h2>
           <ul class="contact-list">
             <li>
