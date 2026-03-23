@@ -551,12 +551,6 @@ a:hover {
   color: var(--muted);
 }
 
-.pub-selected-note {
-  margin-top: 0.25rem;
-  font-size: 0.92rem;
-  color: var(--muted);
-}
-
 /* Teaching page — experience timeline */
 .teaching-page .teaching-lead {
   margin-bottom: 1.35rem;
@@ -631,11 +625,6 @@ a:hover {
 .teaching-entry li {
   margin-bottom: 0.3rem;
   line-height: 1.45;
-}
-
-.pub-source-jump {
-  margin: 0 0 1.75rem;
-  font-size: 0.95rem;
 }
 
 @media (min-width: 768px) {
