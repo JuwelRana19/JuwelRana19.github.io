@@ -549,6 +549,82 @@ a:hover {
   color: var(--muted);
 }
 
+/* Teaching page — experience timeline */
+.teaching-page .teaching-lead {
+  margin-bottom: 1.35rem;
+  line-height: 1.65;
+}
+
+.teaching-page .teaching-order-note {
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin: -0.25rem 0 1.35rem;
+}
+
+.teaching-page h2 {
+  font-size: 1.12rem;
+  margin: 2rem 0 0.65rem;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.teaching-page main > h2:first-of-type {
+  margin-top: 0.5rem;
+}
+
+.teaching-entry {
+  margin: 0 0 0;
+  padding-bottom: 1.4rem;
+  margin-bottom: 1.4rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.teaching-entry:last-of-type {
+  border-bottom: none;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0;
+}
+
+.teaching-entry__dates {
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 0 0 0.45rem;
+}
+
+.teaching-entry__role {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0 0 0.35rem;
+  line-height: 1.35;
+  color: var(--text);
+}
+
+.teaching-entry__org {
+  margin: 0 0 0.45rem;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.teaching-entry__detail {
+  margin: 0.45rem 0 0;
+  line-height: 1.55;
+  font-size: 0.95rem;
+}
+
+.teaching-entry ul {
+  margin: 0.4rem 0 0;
+  padding-left: 1.25rem;
+  font-size: 0.95rem;
+}
+
+.teaching-entry li {
+  margin-bottom: 0.3rem;
+  line-height: 1.45;
+}
+
 .pub-source-jump {
   margin: 0 0 1.75rem;
   font-size: 0.95rem;
