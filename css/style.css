@@ -760,6 +760,14 @@ footer.site {
   display: block;
 }
 
+.slideshow-hint {
+  text-align: center;
+  margin: 0.75rem auto 0;
+  max-width: 960px;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
 /* Placeholder shown until real photos are added */
 .slide-placeholder {
   width: 100%;
