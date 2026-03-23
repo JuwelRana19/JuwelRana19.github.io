@@ -543,6 +543,14 @@ a:hover {
   margin-bottom: 0;
 }
 
+.pub-selected .pub-featured {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.86rem;
+  font-style: italic;
+  color: var(--muted);
+}
+
 .pub-selected-note {
   margin-top: 0.25rem;
   font-size: 0.92rem;
