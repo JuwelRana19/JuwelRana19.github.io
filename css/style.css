@@ -1116,6 +1116,22 @@ a.paper-card:focus-visible {
 }
 
 /* Research cards */
+.home-intro {
+  padding: 2.25rem 0 0;
+}
+
+.home-intro-text {
+  max-width: 52rem;
+  margin: 0 auto;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: #3a4556;
+}
+
+.home-intro-text a {
+  color: #1a4b8c;
+}
+
 .home-research {
   background: #f4f7fb;
   padding: 3rem 0;
