@@ -671,6 +671,51 @@ footer.site {
   color: var(--muted);
 }
 
+/* Knowledge Translation — press listings */
+.kt-muted {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.kt-press-item {
+  margin: 1.25rem 0 1.75rem;
+  padding-bottom: 1.35rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.kt-press-item:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.kt-press-item h3 {
+  font-size: 1.05rem;
+  margin: 0 0 0.35rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.kt-press-meta {
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin: 0 0 0.85rem;
+  line-height: 1.45;
+}
+
+.kt-press-item ul {
+  margin: 0.35rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.kt-press-item li {
+  margin-bottom: 0.45rem;
+}
+
+.kt-press-item cite {
+  font-style: normal;
+  color: var(--text);
+}
+
 /* ── Photo gallery slideshow ───────────────────────────────────── */
 
 /* Outer wrapper constrains width and adds breathing room */
