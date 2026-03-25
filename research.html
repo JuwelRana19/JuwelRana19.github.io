@@ -150,7 +150,6 @@
       </div>
     </footer>
 
-    <script src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js" async></script>
     <script>
     document.getElementById("y").textContent = new Date().getFullYear();
 
@@ -317,13 +316,11 @@
       document.getElementById("pub-count").textContent =
         "Showing " + pubs.length + " of " + PUBS.length + " publications";
 
-      if (window._altmetric_embed_init) {
-        window._altmetric_embed_init();
-      } else {
-        var s = document.createElement("script");
-        s.src = "https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js";
-        document.body.appendChild(s);
-      }
+      var oldAM = document.querySelector('script[src*="altmetric"]');
+      if (oldAM) oldAM.parentNode.removeChild(oldAM);
+      var amScript = document.createElement("script");
+      amScript.src = "https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js";
+      document.body.appendChild(amScript);
     }
 
     function collectFieldOptions() {
@@ -340,12 +337,15 @@
       }
       options.sort();
       var sel = document.getElementById("pub-filter");
+      var current = sel.value;
+      while (sel.options.length > 1) sel.remove(1);
       for (var j = 0; j < options.length; j++) {
         var opt = document.createElement("option");
         opt.value = options[j];
         opt.textContent = options[j];
         sel.appendChild(opt);
       }
+      sel.value = current;
     }
 
     function sortPubs(arr, key) {
@@ -380,6 +380,73 @@
     document.getElementById("pub-sort").addEventListener("change", refresh);
     document.getElementById("pub-filter").addEventListener("change", refresh);
     refresh();
+
+    (function autoFetchPubMed() {
+      var SEARCH_TERM = "Rana+Juwel%5BAuthor%5D";
+      var statusEl = document.getElementById("pub-count");
+
+      function knownPmids() {
+        var s = {};
+        PUBS.forEach(function(p) { if (p.pmid) s[p.pmid] = true; });
+        return s;
+      }
+
+      function parseSummaryDoc(pmid, doc) {
+        var authors = (doc.authors || []).map(function(a) { return a.name; });
+        var doi = "", pmcid = "";
+        (doc.articleids || []).forEach(function(aid) {
+          if (aid.idtype === "doi") doi = aid.value;
+          if (aid.idtype === "pmc") pmcid = aid.value;
+        });
+        var ym = (doc.pubdate || "").match(/(\d{4})/);
+        return {
+          pmid: pmid, pmcid: pmcid, title: doc.title || "",
+          authors: authors, journal: doc.fulljournalname || "",
+          journalAbbr: doc.source || "", year: ym ? parseInt(ym[1]) : 0,
+          volume: doc.volume || "", issue: doc.issue || "",
+          pages: doc.pages || "", doi: doi, mesh: [], keywords: []
+        };
+      }
+
+      function hasRanaAuthor(doc) {
+        return (doc.authors || []).some(function(a) {
+          return /\bRana\b/i.test(a.name || "");
+        });
+      }
+
+      async function run() {
+        try {
+          statusEl.textContent += " \u00b7 Checking PubMed\u2026";
+          var r1 = await fetch("https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=" + SEARCH_TERM + "&retmax=200&retmode=json");
+          if (!r1.ok) throw 0;
+          var d1 = await r1.json();
+          var ids = d1.esearchresult.idlist || [];
+          var known = knownPmids();
+          var fresh = ids.filter(function(id) { return !known[id]; });
+          if (!fresh.length) {
+            statusEl.textContent = "Showing " + PUBS.length + " of " + PUBS.length + " publications \u00b7 PubMed up to date \u2713";
+            return;
+          }
+          var r2 = await fetch("https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=" + fresh.join(",") + "&retmode=json");
+          if (!r2.ok) throw 0;
+          var d2 = await r2.json();
+          var added = 0;
+          fresh.forEach(function(pmid) {
+            var doc = d2.result[pmid];
+            if (!doc || doc.error) return;
+            if (!hasRanaAuthor(doc)) return;
+            PUBS.push(parseSummaryDoc(pmid, doc));
+            added++;
+          });
+          if (added > 0) { collectFieldOptions(); refresh(); }
+          var msg = statusEl.textContent.replace(/ \u00b7 Checking.*$/, "");
+          statusEl.textContent = msg + (added ? " \u00b7 " + added + " new from PubMed \u2713" : " \u00b7 PubMed up to date \u2713");
+        } catch(e) {
+          statusEl.textContent = statusEl.textContent.replace(/ \u00b7 Checking.*$/, "");
+        }
+      }
+      run();
+    })();
     </script>
   </body>
 </html>
