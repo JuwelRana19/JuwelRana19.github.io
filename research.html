@@ -215,10 +215,10 @@
       {"pmid":"","pmcid":"","title":"Social determinants of awareness and behavior regarding STDs and HIV/AIDS among ever married women in Bangladesh.","authors":["Rana J"],"journal":"Family Medicine & Primary Care Review","journalAbbr":"Fam Med Prim Care Rev","year":2016,"volume":"18","issue":"4","pages":"460-469","doi":"10.5114/fmpcr.2016.63702","mesh":[],"keywords":["STDs","HIV/AIDS","Bangladesh","social determinants","women"]},
       {"pmid":"","pmcid":"","title":"Effectiveness of antismoking campaigns using health shock appeals among male university students in Western Australia.","authors":["Khandaker S","Rana J"],"journal":"Family Medicine & Primary Care Review","journalAbbr":"Fam Med Prim Care Rev","year":2016,"volume":"18","issue":"3","pages":"253-261","doi":"10.5114/fmpcr/64797","mesh":[],"keywords":["antismoking","health campaigns","Australia"]},
       {"pmid":"","pmcid":"","title":"The Dynamic Public Health Workforce: Who Is a Young Professional?","authors":["Chen T","Nathan N","Trevino-Reyna G","Siepmann I","Venticich P","Rana J"],"journal":"McGill Journal of Global Health","journalAbbr":"MJGH","year":2025,"volume":"14","issue":"1","pages":"10-16","doi":"10.26443/mjgh.v14i1.1722","mesh":[],"keywords":["public health","workforce","young professional"]},
-      {"pmid":"","pmcid":"","title":"Social Learning and Governance.","authors":["Juwel R","Ahsan M"],"journal":"Global Encyclopedia of Public Administration, Public Policy, and Governance","journalAbbr":"Global Encycl Public Admin","year":2022,"volume":"","issue":"","pages":"12110-12118","doi":"10.1007/978-3-030-66252-3_1977","mesh":[],"keywords":["social learning","governance"],"bookChapter":true},
-      {"pmid":"","pmcid":"","title":"Ethical Issues in Research.","authors":["Rana J","Dilshad S","Ahsan A"],"journal":"Global Encyclopedia of Public Administration, Public Policy, and Governance","journalAbbr":"Global Encycl Public Admin","year":2022,"volume":"","issue":"","pages":"4157-4163","doi":"10.1007/978-3-030-66252-3_462","mesh":[],"keywords":["ethics","research"],"bookChapter":true},
-      {"pmid":"","pmcid":"","title":"Health Policy.","authors":["Rana J","Rahman F","Bellanger M"],"journal":"Global Encyclopedia of Public Administration, Public Policy, and Governance","journalAbbr":"Global Encycl Public Admin","year":2022,"volume":"","issue":"","pages":"6117-6124","doi":"10.1007/978-3-030-66252-3_212","mesh":[],"keywords":["health policy"],"bookChapter":true},
-      {"pmid":"","pmcid":"","title":"Quantitative Methods.","authors":["Rana J","Gutierrez P","Oldroyd J"],"journal":"Global Encyclopedia of Public Administration, Public Policy, and Governance","journalAbbr":"Global Encycl Public Admin","year":2021,"volume":"","issue":"","pages":"1-6","doi":"10.1007/978-3-319-31816-5_460-1","mesh":[],"keywords":["quantitative methods"],"bookChapter":true}
+      {"pmid":"","pmcid":"","title":"Social Learning and Governance.","authors":["Juwel R","Ahsan M"],"journal":"Global Encyclopedia of Public Administration, Public Policy, and Governance","journalAbbr":"Global Encycl Public Admin","year":2022,"volume":"","issue":"","pages":"12110-12118p","doi":"10.1007/978-3-030-66252-3_1977","mesh":[],"keywords":["social learning","governance"],"bookChapter":true,"editor":"Farazmand A","publisher":"Springer Nature","publisherLocation":"Switzerland AG"},
+      {"pmid":"","pmcid":"","title":"Ethical Issues in Research.","authors":["Rana J","Dilshad S","Ahsan A"],"journal":"Global Encyclopedia of Public Administration, Public Policy, and Governance","journalAbbr":"Global Encycl Public Admin","year":2022,"volume":"","issue":"","pages":"4157-4163p","doi":"10.1007/978-3-030-66252-3_462","mesh":[],"keywords":["ethics","research"],"bookChapter":true,"editor":"Farazmand A","publisher":"Springer Nature","publisherLocation":"Switzerland AG"},
+      {"pmid":"","pmcid":"","title":"Health Policy.","authors":["Rana J","Rahman F","Bellanger M"],"journal":"Global Encyclopedia of Public Administration, Public Policy, and Governance","journalAbbr":"Global Encycl Public Admin","year":2022,"volume":"","issue":"","pages":"6117-6124p","doi":"10.1007/978-3-030-66252-3_212","mesh":[],"keywords":["health policy"],"bookChapter":true,"editor":"Farazmand A","publisher":"Springer International Publishing","publisherLocation":"Switzerland AG"},
+      {"pmid":"","pmcid":"","title":"Quantitative Methods.","authors":["Rana J","Gutierrez P","Oldroyd J"],"journal":"Global Encyclopedia of Public Administration, Public Policy, and Governance","journalAbbr":"Global Encycl Public Admin","year":2021,"volume":"","issue":"","pages":"p.1-6","doi":"10.1007/978-3-319-31816-5_460-1","mesh":[],"keywords":["quantitative methods"],"bookChapter":true,"editor":"Farazmand A","publisher":"Springer Nature","publisherLocation":"Switzerland AG","edition":"1st ed."}
     ];
 
     var FIELD_RULES = [
@@ -304,6 +304,14 @@
     }
 
     function formatCitation(p) {
+      if (p.bookChapter) {
+        var cite = "In: " + esc(p.editor) + ", editor. ";
+        cite += "<em>" + esc(p.journal) + "</em>";
+        if (p.edition) cite += ", " + esc(p.edition);
+        cite += " " + esc(p.publisherLocation) + ": " + esc(p.publisher) + "; " + p.year + ". ";
+        if (p.pages) cite += esc(p.pages) + ".";
+        return cite;
+      }
       var cite = "";
       cite += "<em>" + esc(p.journalAbbr || p.journal) + "</em>";
       if (p.year) cite += ". " + p.year;
