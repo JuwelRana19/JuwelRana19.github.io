@@ -254,6 +254,19 @@
       return fields;
     }
 
+    function getArticleType(p) {
+      if (/medRxiv|bioRxiv|arXiv|preprint/i.test(p.journal)) return {type:"Preprint",color:"#f59e0b"};
+      if (/\bprotocol\b/i.test(p.title)) return {type:"Protocol",color:"#8b5cf6"};
+      if (/\b(comment on|response to|editorial|letter to the editor|reply to)\b/i.test(p.title)) return {type:"Commentary",color:"#f97316"};
+      var isGBD = false;
+      for (var i = 0; i < p.authors.length; i++) {
+        if (/^GBD\s|Collaborators$/i.test(p.authors[i])) { isGBD = true; break; }
+      }
+      if (isGBD) return {type:"GBD Consortium",color:"#0891b2"};
+      if (/\b(systematic review|meta-analysis|scoping review|rapid review|narrative review)\b/i.test(p.title)) return {type:"Review",color:"#6366f1"};
+      return {type:"Original Article",color:"#10b981"};
+    }
+
     function boldAuthor(authors) {
       var parts = [];
       var maxShow = 6;
@@ -308,19 +321,21 @@
         li.setAttribute("value", pubs.length - i);
 
         var fields = getFields(p);
-        var isPreprint = /medRxiv|bioRxiv|arXiv|preprint/i.test(p.journal);
+        var artType = getArticleType(p);
 
         var html = '<div class="pub-item-body">';
         html += '<div class="pub-item-text">';
         html += '<span class="pub-authors">' + boldAuthor(p.authors) + '.</span> ';
         html += '<span class="pub-title">' + esc(p.title) + '</span> ';
         html += '<span class="pub-journal">' + formatCitation(p) + '</span>';
-        if (isPreprint) html += ' <span class="pub-badge pub-badge--preprint">Preprint</span>';
+        html += ' <span class="pub-type-badge" style="--type-color:' + artType.color + '">' + esc(artType.type) + '</span>';
 
         html += '<div class="pub-links">';
         if (p.doi) html += '<a href="https://doi.org/' + esc(p.doi) + '" class="pub-link" target="_blank" rel="noopener">DOI</a>';
         if (p.pmid) html += '<a href="https://pubmed.ncbi.nlm.nih.gov/' + esc(p.pmid) + '/" class="pub-link" target="_blank" rel="noopener">PMID: ' + esc(p.pmid) + '</a>';
         if (p.pmcid) html += '<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/' + esc(p.pmcid) + '/" class="pub-link" target="_blank" rel="noopener">' + esc(p.pmcid) + '</a>';
+        var citeId = p.doi ? "cite-doi-" + p.doi.replace(/[^a-zA-Z0-9]/g,"_") : (p.pmid ? "cite-pmid-" + p.pmid : "");
+        if (citeId) html += '<span class="pub-cite-count" id="' + citeId + '"></span>';
         html += '</div>';
 
         if (fields.length > 0) {
@@ -478,6 +493,41 @@
         }
       }
       run();
+    })();
+
+    (function fetchCitationCounts() {
+      var papers = PUBS.filter(function(p) { return p.doi || p.pmid; });
+      var idx = 0;
+
+      function buildId(p) {
+        if (p.doi) return "cite-doi-" + p.doi.replace(/[^a-zA-Z0-9]/g, "_");
+        if (p.pmid) return "cite-pmid-" + p.pmid;
+        return "";
+      }
+
+      function fetchOne() {
+        if (idx >= papers.length) return;
+        var p = papers[idx++];
+        var paperId = p.doi ? "DOI:" + p.doi : "PMID:" + p.pmid;
+        var url = "https://api.semanticscholar.org/graph/v1/paper/" + encodeURIComponent(paperId) + "?fields=citationCount";
+
+        fetch(url).then(function(r) {
+          if (!r.ok) throw 0;
+          return r.json();
+        }).then(function(d) {
+          if (d && typeof d.citationCount === "number" && d.citationCount > 0) {
+            var el = document.getElementById(buildId(p));
+            if (el) {
+              el.innerHTML = '<i class="fas fa-quote-right"></i> Cited: ' + d.citationCount;
+              el.classList.add("pub-cite-count--loaded");
+            }
+          }
+        }).catch(function() {}).finally(function() {
+          setTimeout(fetchOne, 150);
+        });
+      }
+
+      setTimeout(fetchOne, 1000);
     })();
     </script>
   </body>
