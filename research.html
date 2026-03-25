@@ -333,9 +333,9 @@
         html += '</div>';
 
         if (p.pmid) {
-          html += '<div class="pub-altmetric" data-badge-popover="right" data-badge-type="donut" data-pmid="' + esc(p.pmid) + '"></div>';
+          html += '<div class="altmetric-embed pub-altmetric" data-badge-popover="right" data-badge-type="donut" data-pmid="' + esc(p.pmid) + '"></div>';
         } else if (p.doi) {
-          html += '<div class="pub-altmetric" data-badge-popover="right" data-badge-type="donut" data-doi="' + esc(p.doi) + '"></div>';
+          html += '<div class="altmetric-embed pub-altmetric" data-badge-popover="right" data-badge-type="donut" data-doi="' + esc(p.doi) + '"></div>';
         }
 
         html += '</div>';
@@ -346,10 +346,10 @@
       document.getElementById("pub-count").textContent =
         "Showing " + pubs.length + " of " + PUBS.length + " publications";
 
-      var oldAM = document.querySelector('script[src*="altmetric"]');
-      if (oldAM) oldAM.parentNode.removeChild(oldAM);
+      var oldAM = document.querySelectorAll('script[src*="altmetric"]');
+      oldAM.forEach(function(s) { s.parentNode.removeChild(s); });
       var amScript = document.createElement("script");
-      amScript.src = "https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js";
+      amScript.src = "https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js?v=" + Date.now();
       document.body.appendChild(amScript);
     }
 
