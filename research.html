@@ -545,8 +545,12 @@
         if (html) el.innerHTML = html;
       }
 
+      var bestCites = {};
       function renderCites(doi, count) {
         if (!count || count < 1) return;
+        var prev = bestCites[doi] || 0;
+        if (count <= prev) return;
+        bestCites[doi] = count;
         var el = document.getElementById(citeId(doi));
         if (!el) return;
         el.innerHTML = '<i class="fas fa-quote-right"></i> Cited: ' + count;
@@ -570,12 +574,29 @@
         });
       }
 
+      async function fetchCrossrefBatch(dois) {
+        var filter = dois.map(function(d) { return "doi:" + d; }).join(",");
+        var url = "https://api.crossref.org/works?filter=" + filter
+          + "&select=DOI,is-referenced-by-count&rows=" + dois.length
+          + "&mailto=juwelrana@saistbd.org";
+        var r = await fetch(url);
+        if (!r.ok) return;
+        var data = await r.json();
+        ((data.message || {}).items || []).forEach(function(w) {
+          var doi = (w.DOI || "").toLowerCase();
+          renderCites(doi, w["is-referenced-by-count"] || 0);
+        });
+      }
+
       async function run() {
         try {
           var dois = [];
           PUBS.forEach(function(p) { if (p.doi) dois.push(p.doi); });
           for (var i = 0; i < dois.length; i += 50) {
             await fetchBatch(dois.slice(i, i + 50));
+          }
+          for (var j = 0; j < dois.length; j += 20) {
+            await fetchCrossrefBatch(dois.slice(j, j + 20));
           }
         } catch(e) {}
       }
