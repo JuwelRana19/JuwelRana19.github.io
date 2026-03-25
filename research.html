@@ -334,7 +334,7 @@
         if (p.doi) html += '<a href="https://doi.org/' + esc(p.doi) + '" class="pub-link" target="_blank" rel="noopener">DOI</a>';
         if (p.pmid) html += '<a href="https://pubmed.ncbi.nlm.nih.gov/' + esc(p.pmid) + '/" class="pub-link" target="_blank" rel="noopener">PMID: ' + esc(p.pmid) + '</a>';
         if (p.pmcid) html += '<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/' + esc(p.pmcid) + '/" class="pub-link" target="_blank" rel="noopener">' + esc(p.pmcid) + '</a>';
-        var citeId = p.doi ? "cite-doi-" + p.doi.replace(/[^a-zA-Z0-9]/g,"_") : (p.pmid ? "cite-pmid-" + p.pmid : "");
+        var citeId = p.doi ? "cite-doi-" + p.doi.toLowerCase().replace(/[^a-zA-Z0-9]/g,"_") : (p.pmid ? "cite-pmid-" + p.pmid : "");
         if (citeId) html += '<span class="pub-cite-count" id="' + citeId + '"></span>';
         html += '</div>';
 
@@ -345,7 +345,7 @@
           }
           html += '</div>';
         }
-        var sdgId = p.doi ? "sdg-" + p.doi.replace(/[^a-zA-Z0-9]/g,"_") : "";
+        var sdgId = p.doi ? "sdg-" + p.doi.toLowerCase().replace(/[^a-zA-Z0-9]/g,"_") : "";
         if (sdgId) html += '<div class="pub-sdgs" id="' + sdgId + '"></div>';
         html += '</div>';
 
