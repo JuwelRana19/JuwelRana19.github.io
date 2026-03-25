@@ -224,7 +224,7 @@
     var FIELD_RULES = [
       {field:"Air Pollution",        color:"#2563eb", test:function(p){return has(p,"air pollution|particulate matter|PM2.5|wildfire|smoke|pollutant")}},
       {field:"Environmental Mixtures",color:"#7c3aed", test:function(p){return has(p,"metal mixture|mixtures|WQS|BKMR|chemical|microplastic|selenium|zinc")}},
-      {field:"Causal Methods",        color:"#059669", test:function(p){return has(p,"causal inference|causal mediation|g-computation|doubly robust|collider|machine.learning|SuperLearner|causal forest")}},
+      {field:"Causal Methods",        color:"#059669", test:function(p){return has(p,"causal inference|causal mediation|\\bmediation\\b|g-computation|doubly robust|collider|machine.learning|SuperLearner|causal forest|four.way decomposition")}},
       {field:"Maternal & Child Health",color:"#d97706", test:function(p){return has(p,"child development|child mortality|infant|under.five|premenstrual|menstrual regulation|maternal")}},
       {field:"NCD / Cardiometabolic", color:"#dc2626", test:function(p){return has(p,"diabetes|hypertension|blood pressure|cardiovascular|cardiometabolic|obesity|waist|BMI|body mass")}},
       {field:"Global Health",         color:"#0891b2", test:function(p){return has(p,"global burden|GBD|global health|low and middle.income|LMIC|Bangladesh|Myanmar|Afghanistan|Nepal|sub.Saharan|refugee|displacement")}},
