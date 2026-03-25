@@ -413,11 +413,13 @@
 
     (function autoFetchPubMed() {
       var SEARCH_TERM = "Rana+Juwel%5BAuthor%5D";
+      var EXCLUDE_PMIDS = {"32473463": true};
       var statusEl = document.getElementById("pub-count");
 
       function knownPmids() {
         var s = {};
         PUBS.forEach(function(p) { if (p.pmid) s[p.pmid] = true; });
+        Object.keys(EXCLUDE_PMIDS).forEach(function(id) { s[id] = true; });
         return s;
       }
 
