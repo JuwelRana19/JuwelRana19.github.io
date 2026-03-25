@@ -345,6 +345,8 @@
           }
           html += '</div>';
         }
+        var sdgId = p.doi ? "sdg-" + p.doi.replace(/[^a-zA-Z0-9]/g,"_") : "";
+        if (sdgId) html += '<div class="pub-sdgs" id="' + sdgId + '"></div>';
         html += '</div>';
 
         if (p.pmid) {
@@ -495,39 +497,76 @@
       run();
     })();
 
-    (function fetchCitationCounts() {
-      var papers = PUBS.filter(function(p) { return p.doi || p.pmid; });
-      var idx = 0;
+    (function fetchOpenAlexData() {
+      var SDG_COLORS = {
+        1:"#E5243B",2:"#DDA63A",3:"#4C9F38",4:"#C5192D",5:"#FF3A21",
+        6:"#26BDE2",7:"#FCC30B",8:"#A21942",9:"#FD6925",10:"#DD1367",
+        11:"#FD9D24",12:"#BF8B2E",13:"#3F7E44",14:"#0A97D9",15:"#56C02B",
+        16:"#00689D",17:"#19486A"
+      };
+      var SDG_SHORT = {
+        1:"No Poverty",2:"Zero Hunger",3:"Good Health",4:"Quality Education",
+        5:"Gender Equality",6:"Clean Water",7:"Clean Energy",8:"Decent Work",
+        9:"Industry & Innovation",10:"Reduced Inequalities",11:"Sustainable Cities",
+        12:"Responsible Consumption",13:"Climate Action",14:"Life Below Water",
+        15:"Life on Land",16:"Peace & Justice",17:"Partnerships"
+      };
 
-      function buildId(p) {
-        if (p.doi) return "cite-doi-" + p.doi.replace(/[^a-zA-Z0-9]/g, "_");
-        if (p.pmid) return "cite-pmid-" + p.pmid;
-        return "";
+      function citeId(doi) { return "cite-doi-" + doi.replace(/[^a-zA-Z0-9]/g, "_"); }
+      function sdgId(doi) { return "sdg-" + doi.replace(/[^a-zA-Z0-9]/g, "_"); }
+
+      function renderSdgs(doi, sdgs) {
+        var el = document.getElementById(sdgId(doi));
+        if (!el || !sdgs || !sdgs.length) return;
+        var html = "";
+        sdgs.forEach(function(s) {
+          if (s.score < 0.4) return;
+          var num = parseInt((s.id || "").replace(/.*\/(\d+)$/, "$1"));
+          if (!num || !SDG_COLORS[num]) return;
+          html += '<span class="pub-sdg-badge" style="--sdg-color:' + SDG_COLORS[num] + '">'
+            + '<span class="pub-sdg-num">' + num + '</span>'
+            + esc(SDG_SHORT[num] || s.display_name)
+            + '</span>';
+        });
+        if (html) el.innerHTML = html;
       }
 
-      function fetchOne() {
-        if (idx >= papers.length) return;
-        var p = papers[idx++];
-        var paperId = p.doi ? "DOI:" + p.doi : "PMID:" + p.pmid;
-        var url = "https://api.semanticscholar.org/graph/v1/paper/" + encodeURIComponent(paperId) + "?fields=citationCount";
+      function renderCites(doi, count) {
+        if (!count || count < 1) return;
+        var el = document.getElementById(citeId(doi));
+        if (!el) return;
+        el.innerHTML = '<i class="fas fa-quote-right"></i> Cited: ' + count;
+        el.classList.add("pub-cite-count--loaded");
+      }
 
-        fetch(url).then(function(r) {
-          if (!r.ok) throw 0;
-          return r.json();
-        }).then(function(d) {
-          if (d && typeof d.citationCount === "number" && d.citationCount > 0) {
-            var el = document.getElementById(buildId(p));
-            if (el) {
-              el.innerHTML = '<i class="fas fa-quote-right"></i> Cited: ' + d.citationCount;
-              el.classList.add("pub-cite-count--loaded");
-            }
-          }
-        }).catch(function() {}).finally(function() {
-          setTimeout(fetchOne, 150);
+      function normDoi(d) { return d.replace(/^https?:\/\/doi\.org\//i, "").toLowerCase(); }
+
+      async function fetchBatch(dois) {
+        var filter = dois.map(function(d) { return encodeURIComponent(d); }).join("|");
+        var url = "https://api.openalex.org/works?filter=doi:" + filter
+          + "&select=doi,sustainable_development_goals,cited_by_count&per_page=50"
+          + "&mailto=juwelrana@saistbd.org";
+        var r = await fetch(url);
+        if (!r.ok) return;
+        var data = await r.json();
+        (data.results || []).forEach(function(w) {
+          var doi = normDoi(w.doi || "");
+          renderCites(doi, w.cited_by_count);
+          renderSdgs(doi, w.sustainable_development_goals);
         });
       }
 
-      setTimeout(fetchOne, 1000);
+      async function run() {
+        try {
+          var dois = [];
+          PUBS.forEach(function(p) { if (p.doi) dois.push(p.doi); });
+          for (var i = 0; i < dois.length; i += 50) {
+            await fetchBatch(dois.slice(i, i + 50));
+          }
+        } catch(e) {}
+      }
+
+      setTimeout(run, 800);
     })();
     </script>
   </body>
