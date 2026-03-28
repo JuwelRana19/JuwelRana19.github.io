@@ -1733,19 +1733,6 @@ a.paper-card:focus-visible {
   margin: 0 0.2rem;
 }
 
-/* Interactive dashboards (Shiny, etc.) */
-.blades-visuals {
-  margin-top: 2.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--border);
-}
-
-.blades-visuals h2 {
-  font-size: 1.25rem;
-  margin: 0 0 0.75rem;
-  color: var(--text);
-}
-
 @media (max-width: 720px) {
   .blades-figure-grid {
     grid-template-columns: 1fr;
