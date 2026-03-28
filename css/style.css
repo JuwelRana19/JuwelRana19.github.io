@@ -1768,15 +1768,19 @@ a.paper-card:focus-visible {
   border-radius: 8px;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
   border: 1px solid var(--border);
-  background: #e8edf3;
+  /* Neutral “letterbox” behind photos so contain() doesn’t look empty */
+  background: linear-gradient(180deg, #eef2f7 0%, #e2e8f0 100%);
+  /* Shared frame for both tiles; inner image uses contain (see below) */
   aspect-ratio: 4 / 3;
+  min-height: 220px;
 }
 .kt-stakeholder-photo-grid .blades-figure img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  /* contain = show full photo, no crop; sharp use of high-res files. cover was cropping/zooming and often looked worse. */
+  object-fit: contain;
   object-position: center;
   border-radius: 0;
   border: none;
