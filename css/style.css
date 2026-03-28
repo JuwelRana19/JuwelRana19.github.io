@@ -1599,10 +1599,6 @@ a.paper-card:focus-visible {
 }
 
 /* BLADES cohort page */
-.page-blades .wrap--wide {
-  max-width: 48rem;
-}
-
 .blades-main {
   padding-bottom: 2rem;
 }
