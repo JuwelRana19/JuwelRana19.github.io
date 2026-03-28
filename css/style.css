@@ -454,9 +454,10 @@ a:hover {
 }
 
 .wrap {
+  --wrap-pad-x: 1.35rem;
   max-width: 64rem;
   margin: 1.75rem auto 0;
-  padding: 2rem 1.35rem 2.75rem;
+  padding: 2rem var(--wrap-pad-x) 2.75rem;
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 8px;
@@ -1155,6 +1156,13 @@ footer.site {
   width: 100%;
 }
 
+/* Span full inner width of .wrap (into horizontal padding) so thumbs align with card edges */
+.theme-papers .paper-gallery--duo {
+  margin-left: calc(-1 * var(--wrap-pad-x, 1.35rem));
+  margin-right: calc(-1 * var(--wrap-pad-x, 1.35rem));
+  width: calc(100% + 2 * var(--wrap-pad-x, 1.35rem));
+}
+
 .paper-gallery--duo > li:only-child {
   grid-column: 1 / -1;
   max-width: min(36rem, 100%);
@@ -1164,6 +1172,17 @@ footer.site {
 
 .paper-gallery li {
   margin: 0;
+}
+
+.paper-gallery--duo > li {
+  min-width: 0;
+  display: flex;
+}
+
+.paper-gallery--duo a.paper-card {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
 }
 
 a.paper-card {
