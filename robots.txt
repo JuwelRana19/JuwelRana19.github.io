@@ -1,5 +1,5 @@
-# https://juwelrana19.github.io/
+# https://juwelrana.com/
 User-agent: *
 Allow: /
 
-Sitemap: https://juwelrana19.github.io/sitemap.xml
+Sitemap: https://juwelrana.com/sitemap.xml
