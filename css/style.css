@@ -1220,6 +1220,8 @@ a.paper-card:focus-visible {
   height: auto;
   aspect-ratio: 320 / 420;
   object-fit: cover;
+  /* Keep journal masthead / title at top visible (center crop was clipping “EPIDEMIOLOGY” etc.) */
+  object-position: top center;
   display: block;
 }
 
