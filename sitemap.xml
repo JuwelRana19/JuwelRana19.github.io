@@ -26,6 +26,26 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://juwelrana.com/kt-stakeholder.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://juwelrana.com/kt-talks.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://juwelrana.com/kt-media.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://juwelrana.com/kt-policy-briefs.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
     <loc>https://juwelrana.com/teaching.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>

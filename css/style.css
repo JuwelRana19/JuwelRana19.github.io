@@ -1084,6 +1084,17 @@ footer.site {
   font-size: 0.95rem;
 }
 
+.kt-hub-list {
+  margin: 0.75rem 0 0;
+  padding-left: 1.25rem;
+  max-width: 42rem;
+}
+
+.kt-hub-list li {
+  margin-bottom: 0.65rem;
+  line-height: 1.45;
+}
+
 .kt-press-item {
   margin: 1.25rem 0 1.75rem;
   padding-bottom: 1.35rem;
@@ -1095,6 +1106,7 @@ footer.site {
   padding-bottom: 0;
 }
 
+.kt-press-item h2,
 .kt-press-item h3 {
   font-size: 1.05rem;
   margin: 0 0 0.35rem;
@@ -1121,11 +1133,6 @@ footer.site {
 .kt-press-item cite {
   font-style: normal;
   color: var(--text);
-}
-
-/* KT page section anchors (nav submenu hash links) */
-.wrap main h2[id^="kt-"] {
-  scroll-margin-top: 1.25rem;
 }
 
 /* Research theme pages — clickable first-page thumbnails → DOI / publisher */
