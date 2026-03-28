@@ -1574,16 +1574,140 @@ a.paper-card:focus-visible {
   text-align: center;
 }
 
-/* BLADES cohort page — placeholder for Shiny / embedded visuals */
-.blades-visuals {
+/* BLADES cohort page */
+.page-blades .wrap--wide {
+  max-width: 48rem;
+}
+
+.blades-main {
+  padding-bottom: 2rem;
+}
+
+.blades-lead {
+  font-size: 1.05rem;
+  margin-bottom: 1.75rem;
+  color: var(--text);
+}
+
+.blades-section {
+  margin-bottom: 2rem;
+}
+
+.blades-section h2 {
+  font-size: 1.35rem;
+  font-weight: 650;
+  margin: 0 0 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+}
+
+.blades-section p {
+  margin: 0 0 1rem;
+}
+
+.blades-section p:last-child {
+  margin-bottom: 0;
+}
+
+.blades-list {
+  margin: 0.5rem 0 1rem;
+  padding-left: 1.35rem;
+}
+
+.blades-list li {
+  margin-bottom: 0.4rem;
+}
+
+.blades-list li:last-child {
+  margin-bottom: 0;
+}
+
+.blades-objective {
+  margin: 2rem 0;
+  padding: 1.15rem 1.35rem;
+  background: linear-gradient(135deg, #f0f5fa, #e8f0f7);
+  border-left: 4px solid var(--link);
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 1px 8px rgba(15, 61, 92, 0.06);
+}
+
+.blades-objective h2 {
+  font-size: 1.25rem;
+  margin: 0 0 0.75rem;
+  padding: 0;
+  border: none;
+}
+
+.blades-objective p {
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.65;
+}
+
+.blades-figure-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem 1.5rem;
+  margin: 0.5rem 0 2.25rem;
+}
+
+.blades-figure {
+  margin: 0;
+}
+
+.blades-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--border);
+  background: #f4f7fb;
+}
+
+.blades-figure figcaption {
+  margin-top: 0.55rem;
+  font-size: 0.84rem;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.blades-figure figcaption code {
+  font-size: 0.8rem;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+}
+
+.blades-pub-link {
   margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.95rem;
+}
+
+.blades-pub-link a {
+  margin: 0 0.2rem;
+}
+
+/* Interactive dashboards (Shiny, etc.) */
+.blades-visuals {
+  margin-top: 2.5rem;
   padding-top: 1.5rem;
   border-top: 1px solid var(--border);
 }
+
 .blades-visuals h2 {
   font-size: 1.25rem;
   margin: 0 0 0.75rem;
   color: var(--text);
+}
+
+@media (max-width: 720px) {
+  .blades-figure-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Responsive */

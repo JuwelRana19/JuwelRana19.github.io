@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="BLADES — Bangladesh Longitudinal Child-Adolescent Development, Education, and Environment Study. A prospective cohort led by Juwel Rana and SAIST, Bangladesh."
+      content="BLADES cohort — Bangladesh Longitudinal Child-Adolescent Development, Education, and Environment Study. Longitudinal exposome research in Dhaka and Dinajpur by SAIST; environmental, climate, and social exposures and child and adolescent health."
     />
     <title>BLADES Cohort — Juwel Rana</title>
     <link rel="canonical" href="https://juwelrana.com/blades.html" />
@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
   </head>
-  <body>
+  <body class="page-blades">
     <a class="skip-link" href="#main">Skip to content</a>
     <div class="top-bar">
       <div class="top-bar-inner">
@@ -61,30 +61,114 @@
       </div>
     </header>
 
-    <div class="wrap">
-      <main id="main">
-        <p>
-          The <strong>Bangladesh Longitudinal Child-Adolescent Development, Education, and Environment Study</strong> (<strong>BLADES</strong>) is a prospective cohort initiated in <strong>2021</strong> under the
-          <a href="https://saistbd.org/">South Asian Institute for Social Transformation (SAIST)</a>, Dhaka. The study follows approximately <strong>2,500 households</strong> to examine child and adolescent development, education, and environmental exposures in Bangladesh.
-        </p>
-        <p>
-          BLADES supports policy-relevant research on how social and environmental conditions shape health and learning across the life course. Work linked to this cohort connects to methods in
+    <div class="wrap wrap--wide">
+      <main id="main" class="blades-main">
+        <p class="blades-lead">
+          The <strong>Bangladesh Longitudinal Child-Adolescent Development, Education, and Environment Study</strong> (<strong>BLADES</strong>) is a community-based longitudinal cohort led by the
+          <a href="https://saistbd.org/">South Asian Institute for Social Transformation (SAIST)</a>. Related methods appear under
           <a href="causal-inference.html">causal inference</a>, <a href="environmental-global-health.html">environmental global health</a>, and <a href="policy-evaluation.html">environmental justice</a>.
         </p>
-        <p>
-          More information on SAIST’s research portfolio, including BLADES, is available on the
-          <a href="https://saistbd.org/">SAIST website</a>.
-        </p>
 
-        <section class="blades-visuals" id="cohort-visuals" aria-labelledby="blades-visuals-heading">
-          <h2 id="blades-visuals-heading">Data and visuals</h2>
+        <section class="blades-section" aria-labelledby="blades-overview-heading">
+          <h2 id="blades-overview-heading">Overview and significance</h2>
           <p>
-            This section is reserved for cohort dashboards and interactive tools—for example, a <strong>Shiny</strong> app or other embeddable visuals. Content will be added here as it becomes available.
+            Children and adolescents in low- and middle-income countries are exposed to multiple, co-occurring environmental, climate-related, and social stressors that shape development and long-term health, including the early emergence of non-communicable diseases (NCDs). In Bangladesh, high levels of air pollution, climate vulnerability, and structural inequities disproportionately affect maternal and child health. However, most epidemiologic studies examine these exposures in isolation, limiting our understanding of cumulative, interacting, and life-course effects.
+          </p>
+          <p>
+            The Bangladesh Longitudinal Child-Adolescent Development, Education, and Environment Study (BLADES) addresses this gap through a longitudinal, community-based cohort designed to capture the joint and time-varying effects of environmental, climate-sensitive, psychosocial, and structural exposures on child and adolescent development, as well as parental health and NCD risk.
+          </p>
+          <p>
+            BLADES is among the first cohorts in South Asia to apply a multipollutant, community-based exposome framework integrating environmental, climate, and social domains. The study combines traditional exposure assessment (ambient and indoor pollutants, heavy metals, PAHs, and climate-sensitive factors) with high-dimensional personal exposure profiling using wearable passive sampling wristbands, which identified 545 airborne chemical features across study regions.
+          </p>
+          <p>
+            Importantly, BLADES employs a triangulated exposure assessment strategy, integrating data from low-cost ambient and indoor air pollution sensors, filter-based air sampling with laboratory quantification of pollutants, and personal wearable measurements. This multimodal approach enhances exposure validity, captures spatial and temporal variability, enables cross-platform cross-validation, and reduces exposure misclassification in complex real-world settings.
+          </p>
+          <p>
+            Together, these approaches enable granular, high-resolution characterization of individual- and community-level exposure mixtures beyond conventional pollutant metrics and support advanced mixture, life-course, and causal inference analyses.
           </p>
         </section>
 
-        <p>
+        <div class="blades-figure-grid" role="group" aria-label="Study visuals">
+          <figure class="blades-figure">
+            <img
+              src="img/blades-visual-1.svg"
+              alt="BLADES cohort — study visual (placeholder; replace with your photograph)"
+              width="800"
+              height="450"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>
+              Placeholder graphic. Add <code>img/blades-visual-1.jpg</code> or <code>.png</code>, update the <code>src</code> in <code>blades.html</code>, and edit this caption (e.g. fieldwork, Dhaka/Dinajpur sites).
+            </figcaption>
+          </figure>
+          <figure class="blades-figure">
+            <img
+              src="img/blades-visual-2.svg"
+              alt="BLADES cohort — second study visual (placeholder; replace with your photograph)"
+              width="800"
+              height="450"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>
+              Second visual: same steps using <code>img/blades-visual-2.jpg</code> (or replace the SVG files after renaming).
+            </figcaption>
+          </figure>
+        </div>
+
+        <section class="blades-objective" aria-labelledby="blades-objective-heading">
+          <h2 id="blades-objective-heading">Overall objective</h2>
+          <p>
+            To quantify the joint, cumulative, and time-varying effects of environmental, climate-sensitive, psychosocial, and structural exposures on child and adolescent development, academic outcomes, and parental health, with a particular focus on early-life and intergenerational determinants of non-communicable disease risk in Bangladesh.
+          </p>
+        </section>
+
+        <section class="blades-section" aria-labelledby="blades-methods-heading">
+          <h2 id="blades-methods-heading">Design and methods</h2>
+          <p>
+            BLADES is a community-based longitudinal cohort established by the South Asian Institute for Social Transformation (SAIST) in 2021 across Dhaka and Dinajpur. Between 2022 and 2025, the study enrolled 2,455 households, including children under five, school-aged children (0–18 years), and their mothers/caregivers, with annual follow-up.
+          </p>
+          <p>The study integrates a comprehensive exposome framework with high-resolution exposure assessment, including:</p>
+          <ul class="blades-list">
+            <li>Indoor and ambient air pollutants (PM<sub>1</sub>, PM<sub>2.5</sub>, PM<sub>10</sub>, SO<sub>2</sub>, CO, NO<sub>2</sub>, O<sub>3</sub>)</li>
+            <li>Eleven heavy metals and ten polycyclic aromatic hydrocarbons (PAHs)</li>
+            <li>Climate-sensitive exposures (e.g., greenness, temperature, flooding)</li>
+            <li>Detailed socioeconomic, psychosocial, and household-level data</li>
+          </ul>
+          <p>
+            In addition, personal passive sampling using wearable wristbands was employed to characterize the airborne exposome, identifying 545 distinct chemical compounds across both study regions.
+          </p>
+          <p>
+            Outcomes include child growth, early childhood development, school attendance and academic performance, as well as parental and adolescent cardiometabolic and respiratory health, including blood pressure, lung function, mental health, functional difficulties, and validated measures (ASQ-3, SDQ, quality of life). The study emphasizes early-life and intergenerational determinants of NCD risk, capturing health trajectories across children, adolescents, and parents.
+          </p>
+        </section>
+
+        <section class="blades-section" aria-labelledby="blades-profile-heading">
+          <h2 id="blades-profile-heading">Cohort profile</h2>
+          <p>
+            Approximately 30% of participants are under five years of age, 70% are school-aged children, and 45% of households fall within the poorest wealth quintile. Exposure levels are high across study areas, with higher concentrations in Dhaka and coal-mining regions. For example, median PM<sub>2.5</sub> concentrations reached 104 µg/m³ in Dhaka and 70 µg/m³ in Dinajpur. Ambient lead ranged from 10 to 3,802 ng/m³, arsenic from 3.86 to 34 ng/m³, and PAHs from 34 to 207 ng/m³.
+          </p>
+        </section>
+
+        <section class="blades-section" aria-labelledby="blades-impact-heading">
+          <h2 id="blades-impact-heading">Expected impact</h2>
+          <p>
+            BLADES will generate novel evidence on how co-occurring environmental, climate, and social exposures shape child and adolescent development, as well as parental and intergenerational NCD risk, across the life course, with particular relevance to early-life determinants of disease. By integrating high-dimensional exposome data with longitudinal health outcomes, this study will inform targeted, equity-focused interventions and advance methodological approaches for exposome research in resource-constrained settings.
+          </p>
+        </section>
+
+        <section class="blades-visuals" id="cohort-visuals" aria-labelledby="blades-visuals-heading">
+          <h2 id="blades-visuals-heading">Interactive data and dashboards</h2>
+          <p>
+            This section is reserved for cohort dashboards and interactive tools—for example, a <strong>Shiny</strong> app or other embeddable visuals. Content can be added here as it becomes available.
+          </p>
+        </section>
+
+        <p class="blades-pub-link">
           <a href="research.html">Publications →</a>
+          ·
+          <a href="https://saistbd.org/">SAIST website →</a>
         </p>
       </main>
     </div>
