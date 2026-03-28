@@ -60,6 +60,30 @@ body {
   background: var(--bg);
 }
 
+/* Justified alignment for narrative body text */
+.wrap main p,
+.home-intro .home-intro-text,
+.home-research .research-card p,
+.blades-lead,
+.blades-objective p,
+.blades-section .blades-list li {
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+}
+
+/* Hero banner stays centered */
+.site-banner .site-banner-inner p,
+.site-banner .site-banner-text p,
+.site-banner .site-banner-title {
+  text-align: center;
+}
+
+.home-section-title--center {
+  text-align: center;
+}
+
 /* Thin utility strip */
 .top-bar {
   background: #0d2236;
