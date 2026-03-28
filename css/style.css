@@ -1659,7 +1659,8 @@ a.paper-card:focus-visible {
 }
 
 .blades-section .blades-figure--location,
-.blades-section .blades-figure--exposure {
+.blades-section .blades-figure--exposure,
+.blades-section .blades-figure--outcomes {
   margin: 1.25rem 0 1.5rem;
 }
 
