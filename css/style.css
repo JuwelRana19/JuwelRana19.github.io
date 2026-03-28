@@ -1241,6 +1241,7 @@ a.paper-card:focus-visible {
 .slide-bg-6 { background: linear-gradient(135deg, #1a3a4a, #1a7a8a); }
 .slide-bg-7 { background: linear-gradient(135deg, #0e3048, #2a8d7f); }
 .slide-bg-8 { background: linear-gradient(135deg, #152f42, #156b7a); }
+.slide-bg-9 { background: linear-gradient(135deg, #123040, #1a6b78); }
 
 /* Photos fill the slide naturally */
 .slide img {
@@ -1248,14 +1249,6 @@ a.paper-card:focus-visible {
   height: 100%;
   object-fit: cover;
   display: block;
-}
-
-.slideshow-hint {
-  text-align: center;
-  margin: 0.75rem auto 0;
-  max-width: 960px;
-  font-size: 0.88rem;
-  color: var(--muted);
 }
 
 /* Placeholder shown until real photos are added */
