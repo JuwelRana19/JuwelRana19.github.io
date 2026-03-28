@@ -1757,6 +1757,32 @@ a.paper-card:focus-visible {
   gap: 1.25rem 1.5rem;
 }
 
+/* Stakeholder KT page — matched height & crop for mixed aspect ratios */
+.kt-stakeholder-photo-grid {
+  align-items: stretch;
+}
+.kt-stakeholder-photo-grid .blades-figure {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--border);
+  background: #e8edf3;
+  aspect-ratio: 4 / 3;
+}
+.kt-stakeholder-photo-grid .blades-figure img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+}
+
 .blades-figure {
   margin: 0;
 }
