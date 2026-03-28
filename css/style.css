@@ -532,12 +532,6 @@ a:hover {
   padding-bottom: 0;
   border-bottom: none;
 }
-.education-years {
-  font-weight: 650;
-  margin: 0 0 0.4rem;
-  font-size: 0.95rem;
-  color: var(--text);
-}
 .education-timeline li > p {
   margin: 0 0 0.5rem;
   line-height: 1.6;
@@ -545,10 +539,9 @@ a:hover {
 .education-timeline li > p:last-child {
   margin-bottom: 0;
 }
-.education-meta {
-  font-size: 0.88rem;
-  color: var(--muted);
-  line-height: 1.5;
+.education-timeline li strong {
+  font-weight: 650;
+  color: var(--text);
 }
 
 .short-courses-list {
