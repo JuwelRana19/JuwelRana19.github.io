@@ -1148,6 +1148,21 @@ footer.site {
   padding: 0;
 }
 
+/* Two-up gallery: larger thumbnails on theme pages */
+.paper-gallery--duo {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  max-width: 44rem;
+  margin-inline: auto;
+}
+
+.paper-gallery--duo > li:only-child {
+  grid-column: 1 / -1;
+  max-width: min(22rem, 100%);
+  margin-inline: auto;
+  width: 100%;
+}
+
 .paper-gallery li {
   margin: 0;
 }
@@ -1209,8 +1224,13 @@ a.paper-card:focus-visible {
 }
 
 @media (max-width: 520px) {
-  .paper-gallery {
+  .paper-gallery:not(.paper-gallery--duo) {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .paper-gallery--duo {
+    grid-template-columns: 1fr;
+    max-width: none;
   }
 }
 
