@@ -1148,17 +1148,16 @@ footer.site {
   padding: 0;
 }
 
-/* Two-up gallery: larger thumbnails on theme pages */
+/* Two-up gallery: fill main column; two equal tracks */
 .paper-gallery--duo {
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.25rem;
-  max-width: 44rem;
-  margin-inline: auto;
+  gap: 1.25rem 1.5rem;
+  width: 100%;
 }
 
 .paper-gallery--duo > li:only-child {
   grid-column: 1 / -1;
-  max-width: min(22rem, 100%);
+  max-width: min(36rem, 100%);
   margin-inline: auto;
   width: 100%;
 }
