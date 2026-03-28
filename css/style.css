@@ -1574,6 +1574,18 @@ a.paper-card:focus-visible {
   text-align: center;
 }
 
+/* BLADES cohort page — placeholder for Shiny / embedded visuals */
+.blades-visuals {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+.blades-visuals h2 {
+  font-size: 1.25rem;
+  margin: 0 0 0.75rem;
+  color: var(--text);
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .research-cards { grid-template-columns: repeat(2, 1fr); }
