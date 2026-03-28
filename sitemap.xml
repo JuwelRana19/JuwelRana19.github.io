@@ -21,9 +21,19 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://juwelrana.com/about-scientific-grants.html</loc>
+    <loc>https://juwelrana.com/about-scientific-award.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://juwelrana.com/about-research-travel-grants.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://juwelrana.com/about-scientific-grants.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://juwelrana.com/research.html</loc>
