@@ -1123,6 +1123,11 @@ footer.site {
   color: var(--text);
 }
 
+/* KT page section anchors (nav submenu hash links) */
+.wrap main h2[id^="kt-"] {
+  scroll-margin-top: 1.25rem;
+}
+
 /* Research theme pages — clickable first-page thumbnails → DOI / publisher */
 .theme-papers {
   margin: 1.75rem 0 0;
