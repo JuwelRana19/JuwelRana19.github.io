@@ -454,7 +454,7 @@ a:hover {
 }
 
 .wrap {
-  max-width: 56rem;
+  max-width: 64rem;
   margin: 1.75rem auto 0;
   padding: 2rem 1.35rem 2.75rem;
   background: var(--card);
@@ -573,11 +573,6 @@ a:hover {
   font-size: 0.86rem;
   font-style: italic;
   color: var(--muted);
-}
-
-/* ── Wider wrap for publications page ── */
-.wrap--wide {
-  max-width: 64rem;
 }
 
 /* ── Publication sources section ── */
