@@ -1645,11 +1645,24 @@ a.paper-card:focus-visible {
   line-height: 1.65;
 }
 
+.blades-gallery {
+  margin: 0.5rem 0 2.25rem;
+}
+
+.blades-figure--featured {
+  margin: 0 0 1.35rem;
+}
+
+.blades-figure--featured img {
+  max-height: min(70vh, 520px);
+  object-fit: cover;
+  object-position: center;
+}
+
 .blades-figure-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.25rem 1.5rem;
-  margin: 0.5rem 0 2.25rem;
 }
 
 .blades-figure {
