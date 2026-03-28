@@ -1156,17 +1156,6 @@ footer.site {
   width: 100%;
 }
 
-/* Asymmetric duo: wider first column (e.g. Epidemiology + second paper on Causal Inference) */
-.paper-gallery--duo-wide-first {
-  grid-template-columns: minmax(0, 1.28fr) minmax(0, 0.72fr);
-}
-
-@media (min-width: 521px) {
-  .page-causal-inference .theme-papers .paper-gallery--duo-wide-first {
-    margin-left: 0.75rem;
-  }
-}
-
 /* Span full inner width of .wrap (into horizontal padding) so thumbs align with card edges */
 .theme-papers .paper-gallery--duo {
   margin-left: calc(-1 * var(--wrap-pad-x, 1.35rem));
