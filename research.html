@@ -125,7 +125,7 @@
               <label for="pub-filter">Filter by field</label>
               <select id="pub-filter">
                 <option value="all" selected>All fields</option>
-                <option value="first-author-rana">First author (Juwel Rana)</option>
+                <option value="first-author-rana" title="Papers where the first author is Rana, J. (listed as Rana J in the author list)">First author (Rana, J.)</option>
               </select>
             </div>
           </div>
@@ -440,10 +440,13 @@
       return copy;
     }
 
-    function isFirstAuthorJuwel(p) {
+    /** First author is Rana, J.: PubMed lists as Rana J; also Rana, J. / Rana, J, or Juwel R where first. */
+    function isFirstAuthorRanaJ(p) {
       if (!p.authors || !p.authors.length) return false;
       var first = p.authors[0].trim();
-      return /^Rana J\b/i.test(first) || /^Juwel R\b/i.test(first);
+      if (/^Rana\s*,?\s*J\.?\b/i.test(first)) return true;
+      if (/^Juwel\s+R\.?\b/i.test(first)) return true;
+      return false;
     }
 
     function refresh() {
@@ -451,7 +454,7 @@
       var filterField = document.getElementById("pub-filter").value;
       var filtered = PUBS;
       if (filterField === "first-author-rana") {
-        filtered = PUBS.filter(isFirstAuthorJuwel);
+        filtered = PUBS.filter(isFirstAuthorRanaJ);
       } else if (filterField !== "all") {
         filtered = PUBS.filter(function(p) {
           var fields = getFields(p);
