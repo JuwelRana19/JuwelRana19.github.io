@@ -118,13 +118,14 @@
                 <option value="year-desc" selected>Year (newest first)</option>
                 <option value="year-asc">Year (oldest first)</option>
                 <option value="journal">Journal</option>
-                <option value="first-author">First author</option>
+                <option value="first-author">First author name (A–Z)</option>
               </select>
             </div>
             <div class="pub-controls-right">
               <label for="pub-filter">Filter by field</label>
               <select id="pub-filter">
                 <option value="all" selected>All fields</option>
+                <option value="first-author-rana">First author (Juwel Rana)</option>
               </select>
             </div>
           </div>
@@ -417,7 +418,7 @@
       options.sort();
       var sel = document.getElementById("pub-filter");
       var current = sel.value;
-      while (sel.options.length > 1) sel.remove(1);
+      while (sel.options.length > 2) sel.remove(2);
       for (var j = 0; j < options.length; j++) {
         var opt = document.createElement("option");
         opt.value = options[j];
@@ -439,11 +440,19 @@
       return copy;
     }
 
+    function isFirstAuthorJuwel(p) {
+      if (!p.authors || !p.authors.length) return false;
+      var first = p.authors[0].trim();
+      return /^Rana J\b/i.test(first) || /^Juwel R\b/i.test(first);
+    }
+
     function refresh() {
       var sortKey = document.getElementById("pub-sort").value;
       var filterField = document.getElementById("pub-filter").value;
       var filtered = PUBS;
-      if (filterField !== "all") {
+      if (filterField === "first-author-rana") {
+        filtered = PUBS.filter(isFirstAuthorJuwel);
+      } else if (filterField !== "all") {
         filtered = PUBS.filter(function(p) {
           var fields = getFields(p);
           for (var i = 0; i < fields.length; i++) {
