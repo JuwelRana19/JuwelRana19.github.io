@@ -1190,6 +1190,27 @@ footer.site {
   line-height: 1.45;
 }
 
+/* About page — horizontal hub links (submenu titles only) */
+.about-hub-nav {
+  margin-top: 1rem;
+}
+.about-hub-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  align-items: center;
+}
+.about-hub-list li {
+  margin: 0;
+  line-height: 1.4;
+}
+.about-hub-list a {
+  font-weight: 500;
+}
+
 .kt-press-item {
   margin: 1.25rem 0 1.75rem;
   padding-bottom: 1.35rem;
