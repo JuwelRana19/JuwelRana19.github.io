@@ -1884,19 +1884,6 @@ a.paper-card:focus-visible {
   color: var(--text);
 }
 
-.blades-section h3.blades-subheading {
-  font-size: 1.1rem;
-  font-weight: 650;
-  margin: 0 0 0.65rem;
-  padding: 0;
-  border: 0;
-  color: var(--text);
-}
-
-.blades-collab-institutions {
-  margin-top: 0;
-}
-
 .blades-section p {
   margin: 0 0 1rem;
 }
