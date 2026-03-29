@@ -1248,6 +1248,9 @@ footer.site {
 }
 
 /* Knowledge Translation — invited talks list */
+.kt-talks-section + .kt-talks-section {
+  margin-top: 2rem;
+}
 .kt-talks-section h2 {
   font-size: 1.15rem;
   margin: 0 0 0.65rem;
