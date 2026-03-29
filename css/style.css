@@ -1269,6 +1269,23 @@ footer.site {
   white-space: nowrap;
 }
 
+.kt-talk-figure {
+  margin: 0.75rem 0 0;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.kt-talk-figure img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.08);
+}
+
 /* About page — horizontal hub links (submenu titles only) */
 .about-hub-nav {
   margin-top: 1rem;
