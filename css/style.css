@@ -556,6 +556,42 @@ a:hover {
   margin-bottom: 0;
 }
 
+/* Academic awards — year column + body (CV-style) */
+.academic-awards-list {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0;
+}
+.academic-awards-list > li {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.35rem 1rem;
+  align-items: start;
+  margin-bottom: 1.15rem;
+  line-height: 1.55;
+}
+.academic-awards-list > li:last-child {
+  margin-bottom: 0;
+}
+.academic-awards-list .academic-award-years {
+  font-weight: 650;
+  color: var(--text);
+  white-space: nowrap;
+}
+.academic-awards-list .academic-award-body {
+  margin: 0;
+  min-width: 0;
+}
+@media (max-width: 520px) {
+  .academic-awards-list > li {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+  }
+  .academic-awards-list .academic-award-years {
+    white-space: normal;
+  }
+}
+
 .about-page h2 {
   font-size: 1.15rem;
   margin: 1.75rem 0 0.65rem;
