@@ -564,8 +564,8 @@ a:hover {
 }
 .academic-awards-list > li {
   display: grid;
-  grid-template-columns: max-content 1fr;
-  gap: 0.35rem 1rem;
+  grid-template-columns: minmax(0, 11rem) minmax(0, 1fr);
+  gap: 0.35rem 1.25rem;
   align-items: start;
   margin-bottom: 1.15rem;
   line-height: 1.55;
@@ -577,6 +577,9 @@ a:hover {
   font-weight: 650;
   color: var(--text);
   white-space: nowrap;
+  text-align: right;
+  justify-self: stretch;
+  padding-right: 0.15rem;
 }
 .academic-awards-list .academic-award-body {
   margin: 0;
@@ -589,6 +592,9 @@ a:hover {
   }
   .academic-awards-list .academic-award-years {
     white-space: normal;
+    text-align: left;
+    justify-self: start;
+    padding-right: 0;
   }
 }
 
