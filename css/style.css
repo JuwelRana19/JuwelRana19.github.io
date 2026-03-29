@@ -1230,6 +1230,14 @@ footer.site {
   border: 0;
 }
 
+/* Science Communication — YouTube feature in press article */
+.kt-press-item--featured-video .kt-media-youtube-embed {
+  margin: 1rem auto 0;
+}
+.kt-press-item--featured-video .kt-muted {
+  margin-top: 0.65rem;
+}
+
 /* Knowledge Translation — press listings */
 .kt-muted {
   color: var(--muted);
