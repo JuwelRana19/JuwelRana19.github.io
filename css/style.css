@@ -288,6 +288,13 @@ body {
   text-align: left;
 }
 
+.site-banner-grid--text-only .site-banner-kicker,
+.site-banner-grid--text-only .site-banner-title,
+.site-banner-grid--text-only .site-banner-tagline,
+.site-banner-grid--text-only .site-banner-affil {
+  text-align: left;
+}
+
 .site-banner-grid--text-only .site-banner-tagline {
   margin-left: 0;
   margin-right: 0;
@@ -298,6 +305,24 @@ body {
   .site-banner-grid--text-only .site-banner-text {
     max-width: 44rem;
   }
+}
+
+/* Home hero: force visible left alignment for text-only block */
+body.page-home .site-banner .site-banner-grid--text-only {
+  justify-items: start;
+}
+
+body.page-home .site-banner .site-banner-grid--text-only .site-banner-text {
+  width: min(44rem, 100%);
+  margin: 0 auto 0 0;
+  text-align: left !important;
+}
+
+body.page-home .site-banner .site-banner-grid--text-only .site-banner-kicker,
+body.page-home .site-banner .site-banner-grid--text-only .site-banner-title,
+body.page-home .site-banner .site-banner-grid--text-only .site-banner-tagline,
+body.page-home .site-banner .site-banner-grid--text-only .site-banner-affil {
+  text-align: left !important;
 }
 
 /* Compact banner (Publications page, etc.) */
