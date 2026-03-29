@@ -2009,15 +2009,17 @@ a.paper-card:focus-visible {
   gap: 1.25rem 1.5rem;
 }
 
-/* Stakeholder KT page — matched height & crop for mixed aspect ratios */
+/* Stakeholder KT page — same tile height as KT talks two-up (4:3 + cover) */
 .kt-stakeholder-photo-grid {
-  align-items: start;
+  align-items: stretch;
 }
 .kt-stakeholder-photo-grid .kt-stakeholder-figure {
   margin: 0;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  min-width: 0;
+  height: 100%;
 }
 .kt-stakeholder-photo-grid .kt-stakeholder-photo-frame {
   position: relative;
@@ -2026,16 +2028,18 @@ a.paper-card:focus-visible {
   border-radius: 8px;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
   border: 1px solid var(--border);
-  background: linear-gradient(180deg, #eef2f7 0%, #e2e8f0 100%);
+  background: #e8edf4;
   aspect-ratio: 4 / 3;
-  min-height: 220px;
+  width: 100%;
+  min-height: 0;
+  flex-shrink: 0;
 }
 .kt-stakeholder-photo-grid .kt-stakeholder-photo-frame img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
   border-radius: 0;
   border: none;
