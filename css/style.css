@@ -1247,6 +1247,22 @@ footer.site {
   white-space: nowrap;
 }
 
+/* Network & Collaborators — professional memberships */
+.people-network-list {
+  list-style: none;
+  margin: 0.35rem 0 0;
+  padding: 0;
+  max-width: 46rem;
+}
+.people-network-list li {
+  margin-bottom: 0.65rem;
+  line-height: 1.5;
+}
+.people-network-dates {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
 /* About page — horizontal hub links (submenu titles only) */
 .about-hub-nav {
   margin-top: 1rem;
