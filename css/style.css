@@ -2009,7 +2009,7 @@ a.paper-card:focus-visible {
   gap: 1.25rem 1.5rem;
 }
 
-/* Stakeholder KT page — same tile height as KT talks two-up (4:3 + cover) */
+/* Stakeholder KT — equal 4:3 tiles; contain = full photo, no crop/stretch (letterbox uses gradient) */
 .kt-stakeholder-photo-grid {
   align-items: stretch;
 }
@@ -2028,7 +2028,7 @@ a.paper-card:focus-visible {
   border-radius: 8px;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
   border: 1px solid var(--border);
-  background: #e8edf4;
+  background: linear-gradient(180deg, #f4f7fb 0%, #e8eef5 100%);
   aspect-ratio: 4 / 3;
   width: 100%;
   min-height: 0;
@@ -2039,7 +2039,7 @@ a.paper-card:focus-visible {
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   border-radius: 0;
   border: none;
