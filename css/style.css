@@ -598,6 +598,28 @@ a:hover {
   .academic-awards-list .academic-award-years {
     white-space: normal;
   }
+  .people-institutions-list .people-institution-name,
+  .people-institutions-list .academic-award-body {
+    grid-column: auto;
+  }
+}
+
+/* Network page — institutions (two-column; matches BLADES collaborator wording) */
+.people-institutions-list.academic-awards-list > li {
+  grid-template-columns: minmax(0, 14rem) minmax(0, 1fr);
+}
+.people-institutions-list .people-institution-name {
+  grid-column: 1;
+  font-weight: 650;
+  margin: 0;
+  min-width: 0;
+  white-space: normal;
+}
+.people-institutions-list .people-institution-name a {
+  font-weight: 650;
+}
+.people-institutions-list .academic-award-body {
+  grid-column: 2;
 }
 
 .about-page h2 {
