@@ -1289,6 +1289,19 @@ footer.site {
   box-shadow: 0 4px 20px rgba(15, 23, 42, 0.08);
 }
 
+/* Science Communication — interview screenshot + caption below image */
+.kt-media-interview-photo.kt-talk-figure {
+  overflow: visible;
+  margin: 1rem 0 0.35rem;
+}
+.kt-media-interview-photo .kt-media-interview-caption {
+  margin: 0.5rem 0 0;
+  padding: 0 0.1rem;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
 .kt-talk-figure-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
