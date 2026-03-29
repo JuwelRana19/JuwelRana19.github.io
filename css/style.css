@@ -564,10 +564,10 @@ a:hover {
 }
 .academic-awards-list > li {
   display: grid;
-  grid-template-columns: minmax(0, 11rem) minmax(0, 1fr);
-  gap: 0.35rem 1rem;
+  grid-template-columns: minmax(0, 9.5rem) minmax(0, 1fr);
+  gap: 0.3rem 0.5rem;
   align-items: start;
-  margin-bottom: 1.15rem;
+  margin-bottom: 0.85rem;
   line-height: 1.55;
 }
 .academic-awards-list > li:last-child {
