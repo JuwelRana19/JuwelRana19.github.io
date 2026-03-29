@@ -565,7 +565,7 @@ a:hover {
 .academic-awards-list > li {
   display: grid;
   grid-template-columns: minmax(0, 10rem) minmax(0, 1fr);
-  column-gap: 1rem;
+  column-gap: 0.5rem;
   row-gap: 0.25rem;
   align-items: start;
   margin-bottom: 0.65rem;
