@@ -1289,6 +1289,24 @@ footer.site {
   box-shadow: 0 4px 20px rgba(15, 23, 42, 0.08);
 }
 
+.kt-talk-figure-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin: 0.75rem 0 0;
+  max-width: 100%;
+  min-width: 0;
+  align-items: start;
+}
+.kt-talk-figure-row .kt-talk-figure {
+  margin: 0;
+}
+@media (max-width: 640px) {
+  .kt-talk-figure-row {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* About page — horizontal hub links (submenu titles only) */
 .about-hub-nav {
   margin-top: 1rem;
