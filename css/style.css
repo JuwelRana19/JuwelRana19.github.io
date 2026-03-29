@@ -1998,6 +1998,14 @@ a.paper-card:focus-visible {
   outline-offset: 2px;
 }
 
+span.blades-logo-link {
+  cursor: default;
+}
+span.blades-logo-link:hover {
+  border-color: var(--border);
+  box-shadow: none;
+}
+
 .blades-logo-link img {
   display: block;
   max-width: min(220px, 100%);
