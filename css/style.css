@@ -1806,52 +1806,66 @@ a.paper-card:focus-visible {
   border-color: var(--link);
 }
 
-/* Updates under the home photo */
+/* Updates — short posts after the biography */
 .home-updates {
-  padding: 2.25rem 0 2.5rem;
+  padding: 2.5rem 0 2.75rem;
 }
 
 .home-updates .home-container {
   max-width: 52rem;
 }
 
-.home-updates-list {
-  list-style: none;
-  margin: 0.25rem 0 0;
-  padding: 0;
+.update-posts {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  margin-top: 1.15rem;
 }
 
-.home-updates-list li {
-  display: grid;
-  grid-template-columns: 11.5rem 1fr;
-  gap: 0.35rem 1.25rem;
-  padding: 0.85rem 0;
-  border-top: 1px solid var(--border);
+.update-post {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.35rem 1.5rem 1.25rem;
+  box-shadow: 0 2px 14px rgba(18, 69, 96, 0.08);
+  border-top: 3px solid var(--accent);
 }
 
-.home-updates-list li:last-child {
-  border-bottom: 1px solid var(--border);
-}
-
-.home-updates-list time {
-  color: var(--muted);
+.update-post-kicker {
+  margin: 0 0 0.4rem;
+  font-size: 0.78rem;
   font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
 }
 
-.home-updates-list p {
+.update-post h3 {
+  margin: 0 0 0.55rem;
+  font-size: 1.22rem;
+  font-weight: 650;
+  line-height: 1.35;
+  color: var(--text);
+}
+
+.update-post p {
   margin: 0;
-  line-height: 1.55;
+  font-size: 1.02rem;
+  line-height: 1.65;
+  color: #3a4556;
 }
 
-.home-updates-list a {
+.update-post-link {
+  display: inline-block;
+  margin-top: 0.85rem;
+  font-size: 0.92rem;
+  font-weight: 600;
   color: var(--link);
+  text-decoration: none;
 }
 
-@media (max-width: 600px) {
-  .home-updates-list li {
-    grid-template-columns: 1fr;
-    gap: 0.2rem;
-  }
+.update-post-link:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
 }
 
 /* Research cards */
