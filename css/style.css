@@ -1806,66 +1806,87 @@ a.paper-card:focus-visible {
   border-color: var(--link);
 }
 
-/* Updates — short posts after the biography */
+/* Updates — two-column news grid after research areas */
 .home-updates {
-  padding: 2.5rem 0 2.75rem;
-}
-
-.home-updates .home-container {
-  max-width: 52rem;
-}
-
-.update-posts {
-  display: flex;
-  flex-direction: column;
-  gap: 1.15rem;
-  margin-top: 1.15rem;
-}
-
-.update-post {
+  padding: 2.75rem 0 3rem;
   background: #fff;
-  border-radius: 8px;
-  padding: 1.35rem 1.5rem 1.25rem;
-  box-shadow: 0 2px 14px rgba(18, 69, 96, 0.08);
-  border-top: 3px solid var(--accent);
 }
 
-.update-post-kicker {
-  margin: 0 0 0.4rem;
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+.update-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.25rem 2.5rem;
+  margin-top: 1.5rem;
+}
+
+.update-card time {
+  display: block;
+  margin: 0 0 0.55rem;
+  font-size: 0.92rem;
   color: var(--muted);
 }
 
-.update-post h3 {
-  margin: 0 0 0.55rem;
-  font-size: 1.22rem;
-  font-weight: 650;
-  line-height: 1.35;
-  color: var(--text);
+.update-card-media {
+  display: block;
+  aspect-ratio: 16 / 10;
+  margin-bottom: 0.8rem;
+  overflow: hidden;
+  text-decoration: none;
 }
 
-.update-post p {
-  margin: 0;
-  font-size: 1.02rem;
-  line-height: 1.65;
-  color: #3a4556;
-}
-
-.update-post-link {
-  display: inline-block;
-  margin-top: 0.85rem;
-  font-size: 0.92rem;
+.update-card-cover {
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+  padding: 1.15rem 1.25rem;
+  color: #f7fafc;
+  font-size: 1.35rem;
   font-weight: 600;
+  line-height: 1.25;
+  background: linear-gradient(145deg, #124560 0%, #1a7a8a 100%);
+}
+
+.update-card:nth-child(2) .update-card-cover {
+  background: linear-gradient(145deg, #0a2a3d 0%, #0c648c 100%);
+}
+
+.update-card h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.15rem;
+  font-weight: 500;
+  line-height: 1.4;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.update-card h3 a {
   color: var(--link);
   text-decoration: none;
 }
 
-.update-post-link:hover {
-  color: var(--link-hover);
+.update-card h3 a:hover {
   text-decoration: underline;
+}
+
+.update-card-source {
+  margin: 0 0 0.45rem;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.update-card-more {
+  font-size: 0.92rem;
+  color: var(--link);
+}
+
+.update-card-more:hover {
+  color: var(--link-hover);
+}
+
+@media (max-width: 700px) {
+  .update-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Research cards */
