@@ -1883,6 +1883,36 @@ a.paper-card:focus-visible {
   color: var(--link-hover);
 }
 
+.update-card-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  background: #f4f7fb;
+}
+
+.update-article-figure {
+  margin: 0 0 1.25rem;
+}
+
+.update-article-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+}
+
+.update-article p {
+  line-height: 1.7;
+  margin: 0 0 1rem;
+}
+
+.update-article-meta {
+  margin: 0 0 1rem;
+  color: var(--muted);
+}
+
 @media (max-width: 700px) {
   .update-grid {
     grid-template-columns: 1fr;
