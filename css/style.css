@@ -1927,6 +1927,46 @@ a.paper-card:focus-visible {
   color: var(--muted);
 }
 
+.share-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 1.35rem 0 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.share-bar-label {
+  margin-right: 0.25rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 5px;
+  color: #fff !important;
+  text-decoration: none !important;
+  font-size: 0.95rem;
+}
+
+.share-btn:hover {
+  opacity: 0.85;
+}
+
+.share-x { background: #1a1a1a; }
+.share-linkedin { background: #0077b5; }
+.share-facebook { background: #1877f2; }
+.share-email { background: #ea4335; }
+
 @media (max-width: 700px) {
   .update-grid {
     grid-template-columns: 1fr;
