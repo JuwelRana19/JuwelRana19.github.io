@@ -1903,9 +1903,23 @@ a.paper-card:focus-visible {
   border: 1px solid var(--border);
 }
 
-.update-article p {
-  line-height: 1.7;
-  margin: 0 0 1rem;
+.update-article-host {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.update-article-logo {
+  width: 11rem;
+  height: auto;
+  flex: 0 0 auto;
+}
+
+@media (max-width: 600px) {
+  .update-article-host {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 .update-article-meta {
