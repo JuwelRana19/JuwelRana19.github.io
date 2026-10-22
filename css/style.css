@@ -1965,7 +1965,11 @@ a.paper-card:focus-visible {
 .share-x { background: #1a1a1a; }
 .share-linkedin { background: #0077b5; }
 .share-facebook { background: #1877f2; }
-.share-email { background: #ea4335; }
+.share-bar--card {
+  margin: 0.75rem 0 0;
+  padding-top: 0;
+  border-top: 0;
+}
 
 @media (max-width: 700px) {
   .update-grid {
