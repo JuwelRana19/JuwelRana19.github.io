@@ -1903,6 +1903,16 @@ a.paper-card:focus-visible {
   border: 1px solid var(--border);
 }
 
+.update-article-figure figcaption {
+  margin-top: 0.55rem;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+.update-article-figure figcaption a {
+  color: var(--link);
+}
+
 .update-article-host {
   display: flex;
   align-items: center;
