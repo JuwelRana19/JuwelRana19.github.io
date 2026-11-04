@@ -1937,6 +1937,29 @@ a.paper-card:focus-visible {
   color: var(--muted);
 }
 
+.update-article-outline {
+  margin: 1.5rem 0 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+}
+
+.update-article-outline h2 {
+  margin: 0 0 0.85rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.update-article-outline ol {
+  margin: 0.75rem 0 1rem;
+  padding-left: 1.35rem;
+}
+
+.update-article-outline li + li {
+  margin-top: 0.35rem;
+}
+
 .share-bar {
   display: flex;
   align-items: center;
